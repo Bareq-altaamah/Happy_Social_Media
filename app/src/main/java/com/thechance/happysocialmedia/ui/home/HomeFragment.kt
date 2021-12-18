@@ -7,9 +7,7 @@ import com.thechance.happysocialmedia.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment: BaseFragment<FragmentHomeBinding, HomeViewModel>() {
-
-    override fun getLayoutId() = R.layout.fragment_home
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+    override fun getLayoutID() = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
-
 }

@@ -7,9 +7,7 @@ import com.thechance.happysocialmedia.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>() {
-
-    override fun getLayoutId() = R.layout.fragment_profile
+class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
+    override fun getLayoutID() = R.layout.fragment_profile
     override val viewModel: ProfileViewModel by viewModels()
-
 }

@@ -1,18 +1,20 @@
 package com.thechance.happysocialmedia.ui.base
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.annotation.StyleRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.Fragment
 import com.thechance.happysocialmedia.BR
 
-abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
+
+abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
     @LayoutRes
     protected abstract fun getLayoutID(): Int
+
+    @StyleRes
+    protected abstract fun getThemeID(): Int
 
     private lateinit var _viewDataBinding: VDB
     protected val viewDataBinding get() = _viewDataBinding
@@ -20,15 +22,12 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
     protected abstract val viewModel: BaseViewModel
     protected open val viewModelBindingVariable get() = BR.viewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _viewDataBinding = DataBindingUtil.inflate<VDB>(inflater, getLayoutID(), container, false).apply {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setTheme(getThemeID())
+        _viewDataBinding = DataBindingUtil.setContentView<VDB>(this, getLayoutID()).apply {
             setVariable(viewModelBindingVariable, viewModel)
-            lifecycleOwner = viewLifecycleOwner
+            lifecycleOwner = this@BaseActivity
         }
-        return _viewDataBinding.root
     }
 }

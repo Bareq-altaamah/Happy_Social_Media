@@ -7,9 +7,7 @@ import com.thechance.happysocialmedia.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NotificationFragment: BaseFragment<FragmentNotificationBinding, NotificationViewModel>() {
-
-    override fun getLayoutId() = R.layout.fragment_notification
+class NotificationFragment : BaseFragment<FragmentNotificationBinding>() {
+    override fun getLayoutID() = R.layout.fragment_notification
     override val viewModel: NotificationViewModel by viewModels()
-
 }
