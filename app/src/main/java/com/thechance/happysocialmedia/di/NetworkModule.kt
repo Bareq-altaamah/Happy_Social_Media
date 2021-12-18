@@ -1,6 +1,7 @@
 package com.thechance.happysocialmedia.di
 
 import com.thechance.happysocialmedia.data.remote.*
+import com.thechance.happysocialmedia.util.Constants
 import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -22,7 +23,7 @@ object NetworkModule {
     ): HappySocialService {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("https://theChance.socialMedia") // change base url later
+            .baseUrl(Constants.BASE_URL) // change base url later
             .addConverterFactory(gsonConverterFactory)
             .build()
             .create(HappySocialService::class.java)
