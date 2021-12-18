@@ -1,6 +1,7 @@
 package com.thechance.happysocialmedia.data.local
 
 import androidx.room.*
+import com.thechance.happysocialmedia.data.local.daos.HappySocialDao
 import com.thechance.happysocialmedia.data.local.entities.TestEntity
 
 @TypeConverters(Convertor::class)

@@ -3,6 +3,7 @@ package com.thechance.happysocialmedia.di
 import android.content.Context
 import androidx.room.Room
 import com.thechance.happysocialmedia.data.local.*
+import com.thechance.happysocialmedia.data.local.daos.HappySocialDao
 import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext

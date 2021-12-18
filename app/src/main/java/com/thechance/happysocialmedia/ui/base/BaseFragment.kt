@@ -2,36 +2,36 @@ package com.thechance.happysocialmedia.ui.base
 
 import android.os.Bundle
 import android.view.*
+import androidx.annotation.LayoutRes
 import androidx.databinding.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.thechance.happysocialmedia.BR
 
 abstract class BaseFragment<VB: ViewDataBinding, VM: BaseViewModel>: Fragment() {
 
-    abstract val layoutId: Int
-    lateinit var viewModel: VM
-    abstract val viewModelClass: Class<VM>
-    private lateinit var _binding: VB
-    val binding: VB
-        get() = _binding
+    @LayoutRes
+    protected abstract fun getLayoutId(): Int
+
+    protected abstract val viewModel: VM
+
+    private lateinit var _viewDataBinding: VB
+    protected val viewDataBinding
+        get() = _viewDataBinding
+
+    protected open fun getViewModelBindingVariable() = BR.viewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) : View? {
-        initViewModel()
-        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        _binding.apply {
-            lifecycleOwner = this@BaseFragment
-            setVariable(BR.viewModel, viewModel)
-            return root
-        }
-    }
+    ): View? {
 
-    private fun initViewModel() {
-        viewModel = ViewModelProvider(requireActivity())[viewModelClass]
+        _viewDataBinding = DataBindingUtil.inflate<VB>(inflater, getLayoutId(), container, false).also {
+            it.setVariable(getViewModelBindingVariable(), viewModel)
+            it.lifecycleOwner = viewLifecycleOwner
+        }
+
+        return _viewDataBinding.root
     }
 
 }

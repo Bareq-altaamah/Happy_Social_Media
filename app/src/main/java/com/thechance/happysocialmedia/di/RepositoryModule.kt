@@ -1,7 +1,7 @@
 package com.thechance.happysocialmedia.di
 
-import com.thechance.happysocialmedia.data.remote.HappySocialRepositoryImpl
-import com.thechance.happysocialmedia.domain.HappySocialRepository
+import com.thechance.happysocialmedia.data.HappySocialRepositoryImpl
+import com.thechance.happysocialmedia.data.HappySocialRepository
 import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

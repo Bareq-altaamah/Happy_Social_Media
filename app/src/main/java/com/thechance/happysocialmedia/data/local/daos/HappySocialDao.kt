@@ -1,4 +1,4 @@
-package com.thechance.happysocialmedia.data.local
+package com.thechance.happysocialmedia.data.local.daos
 
 import androidx.room.Dao
 

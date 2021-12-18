@@ -1,5 +1,6 @@
 package com.thechance.happysocialmedia.ui.profile
 
+import androidx.fragment.app.viewModels
 import com.thechance.happysocialmedia.R
 import com.thechance.happysocialmedia.databinding.FragmentProfileBinding
 import com.thechance.happysocialmedia.ui.base.BaseFragment
@@ -8,7 +9,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>() {
 
-    override val layoutId: Int = R.layout.fragment_profile
-    override val viewModelClass: Class<ProfileViewModel> =ProfileViewModel::class.java
+    override fun getLayoutId() = R.layout.fragment_profile
+    override val viewModel: ProfileViewModel by viewModels()
 
 }
