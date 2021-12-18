@@ -48,6 +48,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/bottom_nav_menu"
+            app:labelVisibilityMode="labeled"
+            app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+            app:itemRippleColor="@color/brand_color"
+            app:backgroundTint="@color/card_background_color"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
