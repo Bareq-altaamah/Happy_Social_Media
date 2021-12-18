@@ -22,7 +22,7 @@ object NetworkModule {
     ): HappySocialService {
         return Retrofit.Builder()
             .client(okHttpClient)
-//            .baseUrl(Constant.BASE_URL) unComment when finish api
+            .baseUrl("https://theChance.socialMedia") // change base url later
             .addConverterFactory(gsonConverterFactory)
             .build()
             .create(HappySocialService::class.java)
