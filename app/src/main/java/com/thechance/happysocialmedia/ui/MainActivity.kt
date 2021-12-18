@@ -1,7 +1,8 @@
-package com.thechance.happysocialmedia
+package com.thechance.happysocialmedia.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.thechance.happysocialmedia.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
