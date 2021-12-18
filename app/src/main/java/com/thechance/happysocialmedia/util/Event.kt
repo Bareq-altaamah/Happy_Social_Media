@@ -1,13 +1,13 @@
 package com.thechance.happysocialmedia.util
 
-import androidx.lifecycle.Observer
-
 open class Event<out T>(private val content: T) {
-    @Suppress("MemberVisibilityCanBePrivate")
     var hasBeenHandled = false
-        private set
+        private set // Allow external read but not write
 
-    fun getContentIfHandled(): T? {
+    /**
+     * Returns the content and prevents its use again.
+     */
+    fun getContentIfNotHandled(): T? {
         return if (hasBeenHandled) {
             null
         } else {
@@ -16,15 +16,8 @@ open class Event<out T>(private val content: T) {
         }
     }
 
+    /**
+     * Returns the content, even if it's already been handled.
+     */
     fun peekContent(): T = content
-
-}
-
-
-class EventObserver<T>(private val onEventUnhandledContent: (T) -> Unit) : Observer<Event<T>> {
-    override fun onChanged(event: Event<T>?) {
-        event?.getContentIfHandled()?.let { it ->
-            onEventUnhandledContent(it)
-        }
-    }
 }
