@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="background_color">#FF121212</color>
+    <color name="card_background_color">#FF222222</color>
+
+    <color name="shade_primary_color">#DFEFF5FB</color>
+    <color name="shade_secondary_color">#9AEFF5FB</color>
+    <color name="shade_ternary_color">#61EFF5FB</color>
+
+</resources>
