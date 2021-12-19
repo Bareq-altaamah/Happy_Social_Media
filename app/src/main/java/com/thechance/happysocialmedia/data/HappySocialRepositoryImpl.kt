@@ -7,4 +7,4 @@ import javax.inject.Inject
 class HappySocialRepositoryImpl @Inject constructor(
     dao: HappySocialDao,
     apiService: HappySocialService,
-): HappySocialRepository
+)
