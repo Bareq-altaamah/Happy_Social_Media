@@ -11,15 +11,9 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
 
-//    @Singleton
-//    @Binds
-//    abstract fun provideHappySocialRepository(
-//        impl: HappySocialRepositoryImpl
-//    ): HappySocialRepository
-
     @Singleton
     @Binds
-    abstract fun provideFakeRepository(
+    abstract fun provideHappySocialRepository(
         impl: FakeRepository
     ): HappySocialRepository
 }
