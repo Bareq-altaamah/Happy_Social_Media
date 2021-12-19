@@ -10,7 +10,7 @@ class HappySocialRepositoryImpl @Inject constructor(
     dao: HappySocialDao,
     apiService: HappySocialService,
 ): HappySocialRepository {
-    override fun getFakePost(): Flow<List<Post>> {
+    override fun getAllPosts(): Flow<List<Post>> {
         TODO("Not yet implemented")
     }
 }

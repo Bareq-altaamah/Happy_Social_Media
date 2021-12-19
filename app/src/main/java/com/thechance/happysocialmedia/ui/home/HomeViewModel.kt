@@ -21,7 +21,7 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            repository.getFakePost().collect {
+            repository.getAllPosts().collect {
                 post.postValue(it)
                 Log.i(TAG, "HomeViewModel: post -----{ $it } ")
             }

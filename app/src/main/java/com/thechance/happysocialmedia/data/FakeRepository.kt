@@ -12,7 +12,7 @@ class FakeRepository @Inject constructor(
     apiService: HappySocialService,
 ): HappySocialRepository {
 
-    override fun getFakePost(): Flow<List<Post>> = flow {
+    override fun getAllPosts(): Flow<List<Post>> = flow {
         val result = listOf(
             Post(
                 0,
