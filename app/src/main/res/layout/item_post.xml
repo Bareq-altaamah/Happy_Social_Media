@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.App.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin2x"
+        android:layout_marginTop="@dimen/margin2x"
+        android:layout_marginEnd="@dimen/margin2x"
+        app:cardCornerRadius="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/image_profile_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin2x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize25Percent"
+                app:strokeColor="@color/brand_color"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:strokeWidth="3dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_profile"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:padding="5dp"
+                    android:src="@drawable/test_profile"
+                    app:strokeColor="@android:color/transparent"
+                    app:strokeWidth="2dp"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize25Percent" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin1x"
+                android:elevation="3dp"
+                android:shadowColor="@color/background_color"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:alpha="0.87"
+                android:text="Shahad Abdulhasan"
+                android:textAppearance="@style/TextAppearance.App.Title"
+                android:textColor="@color/shade_primary_color"
+                app:layout_constraintBottom_toBottomOf="@+id/image_profile_layout"
+                app:layout_constraintStart_toEndOf="@id/image_profile_layout"
+                app:layout_constraintTop_toTopOf="@id/image_profile_layout" />
+
+            <TextView
+                android:id="@+id/text_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:padding="@dimen/margin2x"
+                android:text="Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet is a library of basic Material Design 2 styles and components. "
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@color/shade_primary_color"
+                app:layout_constraintBottom_toTopOf="@id/button_downvote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_profile_layout" />
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:layout_marginStart="@dimen/margin2x"
+                android:text="12 March"
+                android:alpha="0.6"
+                android:textAppearance="@style/TextAppearance.App.SubTitle"
+                android:textColor="@color/shade_primary_color"
+                app:layout_constraintBottom_toBottomOf="@+id/button_upvote"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button_upvote" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_upvote"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="@dimen/margin1x"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                style="?attr/materialButtonOutlinedStyle"
+                app:icon="@drawable/ic_baseline_keyboard_arrow_up_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                app:iconTint="@color/brand_color"
+                app:strokeColor="@color/brand_color"
+                app:layout_constraintBottom_toBottomOf="@id/text_upvote"
+                app:layout_constraintEnd_toStartOf="@id/text_upvote"
+                app:layout_constraintTop_toTopOf="@id/text_upvote" />
+
+
+            <TextView
+                android:id="@+id/text_upvote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin2x"
+                android:text="3.5 K"
+                android:alpha="0.87"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@color/shade_primary_color"
+                app:layout_constraintBottom_toBottomOf="@id/button_downvote"
+                app:layout_constraintEnd_toStartOf="@id/button_downvote"
+                app:layout_constraintTop_toTopOf="@id/button_downvote" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_downvote"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="@dimen/margin1x"
+                android:layout_marginBottom="@dimen/margin2x"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                app:icon="@drawable/ic_baseline_keyboard_arrow_down_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                android:alpha="0.38"
+                app:iconTint="@color/shade_primary_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text_downvote" />
+
+            <TextView
+                android:id="@+id/text_downvote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin2x"
+                android:text="3.5 K"
+                android:alpha="0.87"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@color/shade_primary_color"
+                app:layout_constraintBottom_toBottomOf="@+id/button_downvote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button_downvote" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
