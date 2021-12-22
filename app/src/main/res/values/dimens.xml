@@ -3,7 +3,6 @@
     <dimen name="margin2x">16dp</dimen>
     <dimen name="radius2x">16dp</dimen>
     <dimen name="margin1x">8dp</dimen>
-    <dimen name="post_image_height">275dp</dimen>
     <dimen name="size28dp">28dp</dimen>
     <dimen name="size24dp">24dp</dimen>
     <dimen name="size48dp">48dp</dimen>

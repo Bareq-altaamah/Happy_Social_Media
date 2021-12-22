@@ -38,12 +38,12 @@
     <style name="TextAppearance.App.SubTitle" parent="TextAppearance.Material3.BodySmall">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">11sp</item>
-        <item name="android:textColor">@color/background_color</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="TextAppearance.App.Title" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/background_color</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.App.Button.Rounded" parent="">
