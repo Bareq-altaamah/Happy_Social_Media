@@ -14,4 +14,27 @@
         <item name="android:color">#61448FDA</item>
     </style>
 
+    <style name="TextViewNumber.TextAppearance" parent="">
+        <item name="android:textSize">@dimen/size_14</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/shade_primary_color</item>
+    </style>
+
+    <style name="TextViewStatus.TextAppearance" parent="">
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/shade_secondary_color</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize24Percent" parent="">
+        <item name="cornerSize">@dimen/size_18</item>
+    </style>
+
 </resources>
