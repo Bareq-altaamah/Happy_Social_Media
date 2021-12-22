@@ -53,9 +53,7 @@
                 app:layout_constraintEnd_toEndOf="@id/layout_image_profile"
                 app:layout_constraintStart_toStartOf="@id/layout_image_profile"
                 app:layout_constraintTop_toTopOf="@id/layout_image_profile"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize25Percent"
-                app:strokeColor="@android:color/white"
-                app:strokeWidth="2dp" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize25Percent" />
 
             <TextView
                 android:id="@+id/label_name"
