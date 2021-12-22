@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Happy Social Media</string>
     <string name="chat">Chat</string>
+    <string name="following">Following</string>
+    <string name="vote_up">vote Up</string>
+    <string name="vote_down">vote Down</string>
+    <string name="follower">Follower</string>
 </resources>
