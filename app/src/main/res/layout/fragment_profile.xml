@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.thechance.happysocialmedia.ui.profile.ProfileViewModel" />
@@ -12,14 +14,161 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="profile"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+        <ImageView
+            android:id="@+id/image_cover"
+            android:layout_width="match_parent"
+            android:layout_height="164dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_cover_test"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_profile_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:background="@drawable/profile_cover_shadow"
+            app:layout_constraintBottom_toBottomOf="@id/image_cover" />
+
+        <View
+            android:id="@+id/view_profile_image_border"
+            android:layout_width="91dp"
+            android:layout_height="91dp"
+            android:background="@drawable/profile_image_border"
+            app:layout_constraintBottom_toBottomOf="@id/image_cover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.3" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_profile"
+            android:layout_width="81dp"
+            android:layout_height="81dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/view_profile_image_border"
+            app:layout_constraintEnd_toEndOf="@id/view_profile_image_border"
+            app:layout_constraintStart_toStartOf="@id/view_profile_image_border"
+            app:layout_constraintTop_toTopOf="@id/view_profile_image_border"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize24Percent"
+            app:srcCompat="@drawable/image_profile_test" />
+
+        <TextView
+            android:id="@+id/label_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="@dimen/margin2x"
+            android:gravity="center"
+            android:text="Sakura"
+            android:textColor="@color/shade_primary_color"
+            android:textSize="@dimen/size_22"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_profile_image_border" />
+
+        <TextView
+            android:id="@+id/label_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Happiness is waiting for you ☺."
+            android:textColor="@color/shade_ternary_color"
+            android:textSize="@dimen/size_12"
+            app:layout_constraintEnd_toEndOf="@id/label_profile_name"
+            app:layout_constraintStart_toStartOf="@id/label_profile_name"
+            app:layout_constraintTop_toBottomOf="@id/label_profile_name" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/status_container"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="@dimen/margin2x"
+            android:layout_marginTop="@dimen/margin7x"
+            android:elevation="@dimen/elevation1x"
+            app:cardCornerRadius="@dimen/size_12"
+            app:layout_constraintEnd_toEndOf="@id/label_bio"
+            app:layout_constraintStart_toStartOf="@id/label_bio"
+            app:layout_constraintTop_toBottomOf="@id/label_bio" />
+
+        <TextView
+            android:id="@+id/label_followers_numbers"
+            style="@style/TextViewNumber.TextAppearance"
+            android:layout_marginTop="@dimen/margin3x"
+            android:text="2.51k"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintEnd_toStartOf="@id/label_following_numbers"
+            app:layout_constraintStart_toStartOf="@id/status_container"
+            app:layout_constraintTop_toTopOf="@id/status_container" />
+
+        <TextView
+            android:id="@+id/label_followers"
+            style="@style/TextViewStatus.TextAppearance"
+            android:text="@string/followers"
+            app:layout_constraintEnd_toEndOf="@id/label_followers_numbers"
+            app:layout_constraintStart_toStartOf="@id/label_followers_numbers"
+            app:layout_constraintTop_toBottomOf="@id/label_followers_numbers" />
+
+        <TextView
+            android:id="@+id/label_following_numbers"
+            style="@style/TextViewNumber.TextAppearance"
+            android:text="2.10k"
+            app:layout_constraintBottom_toBottomOf="@id/label_followers_numbers"
+            app:layout_constraintEnd_toStartOf="@id/label_up_vote_numbers"
+            app:layout_constraintStart_toEndOf="@id/label_followers_numbers"
+            app:layout_constraintTop_toTopOf="@id/label_followers_numbers" />
+
+        <TextView
+            android:id="@+id/label_following"
+            style="@style/TextViewStatus.TextAppearance"
+            android:text="@string/following"
+            app:layout_constraintEnd_toEndOf="@id/label_following_numbers"
+            app:layout_constraintStart_toStartOf="@id/label_following_numbers"
+            app:layout_constraintTop_toBottomOf="@id/label_following_numbers" />
+
+        <TextView
+            android:id="@+id/label_up_vote_numbers"
+            style="@style/TextViewNumber.TextAppearance"
+            android:text="2.5k"
+            app:layout_constraintBottom_toBottomOf="@id/label_following_numbers"
+            app:layout_constraintEnd_toStartOf="@id/label_down_vote_numbers"
+            app:layout_constraintStart_toEndOf="@id/label_following_numbers"
+            app:layout_constraintTop_toTopOf="@id/label_following_numbers" />
+
+        <TextView
+            android:id="@+id/label_up_vote"
+            style="@style/TextViewStatus.TextAppearance"
+            android:text="@string/up_vote"
+            app:layout_constraintEnd_toEndOf="@id/label_up_vote_numbers"
+            app:layout_constraintStart_toStartOf="@id/label_up_vote_numbers"
+            app:layout_constraintTop_toBottomOf="@id/label_up_vote_numbers" />
+
+        <TextView
+            android:id="@+id/label_down_vote_numbers"
+            style="@style/TextViewNumber.TextAppearance"
+            android:text="2.9k"
+            app:layout_constraintBottom_toBottomOf="@id/label_up_vote_numbers"
+            app:layout_constraintEnd_toEndOf="@id/status_container"
+            app:layout_constraintStart_toEndOf="@id/label_up_vote_numbers"
+            app:layout_constraintTop_toTopOf="@id/label_up_vote_numbers" />
+
+        <TextView
+            android:id="@+id/label_down_vote"
+            style="@style/TextViewStatus.TextAppearance"
+            android:text="@string/down_vote"
+            app:layout_constraintEnd_toEndOf="@id/label_down_vote_numbers"
+            app:layout_constraintStart_toStartOf="@id/label_down_vote_numbers"
+            app:layout_constraintTop_toBottomOf="@id/label_down_vote_numbers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_profile_post"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/margin2x"
+            android:layout_marginTop="@dimen/margin2x"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/status_container"
+            tools:listitem="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
