@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/brand_color</item>
         <item name="colorOnPrimary">@color/background_color</item>
-        <item name="android:statusBarColor" tools:targetApi="l">@color/background_color</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/tool_bar_color</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
