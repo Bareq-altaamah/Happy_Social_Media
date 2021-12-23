@@ -17,4 +17,7 @@
     <dimen name="size_22">22sp</dimen>
 
     <dimen name="elevation1x">8dp</dimen>
+    <dimen name="size28dp">28dp</dimen>
+    <dimen name="size24dp">24dp</dimen>
+    <dimen name="size48dp">48dp</dimen>
 </resources>
