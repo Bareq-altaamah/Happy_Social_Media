@@ -6,6 +6,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.thechance.happysocialmedia.R
 import com.thechance.happysocialmedia.databinding.ActivityMainBinding
 import com.thechance.happysocialmedia.ui.base.BaseActivity
+import com.thechance.happysocialmedia.util.bindingAdapters.setVisibility
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,11 +17,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onResume() {
         super.onResume()
-        viewDataBinding.navigation.setupWithNavController(findNavController(R.id.fragment_host))
+        binding.navigation.setupWithNavController(findNavController(R.id.fragment_host))
     }
 
     override fun onSupportNavigateUp(): Boolean {
         findNavController(R.id.fragment_host).navigateUp()
         return true
     }
+
+    fun setDefualtAppBarVisiblity(visible: Boolean){
+        setVisibility(binding.appbar, visible)
+    }
+
 }

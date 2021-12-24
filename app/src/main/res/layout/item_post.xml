@@ -9,7 +9,7 @@
             type="com.thechance.happysocialmedia.domain.models.Post" />
         <variable
             name="listener"
-            type="com.thechance.happysocialmedia.ui.profile.ProfilePostInteractionListener" />
+            type="com.thechance.happysocialmedia.ui.PostInteractionListener" />
 
     </data>
 

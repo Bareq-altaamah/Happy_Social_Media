@@ -14,6 +14,8 @@ class ProfileFragment : BaseFragment<FragmentProfileAnimatedBinding>() {
     override fun getLayoutID() = R.layout.fragment_profile_animated
     override val viewModel: ProfileViewModel by activityViewModels()
 
+    override val useDefaultAppBar: Boolean = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerProfilePost.adapter = ProfilePostsAdapter(viewModel.posts.value.orEmpty(), viewModel)

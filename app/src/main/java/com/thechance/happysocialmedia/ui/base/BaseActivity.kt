@@ -16,8 +16,8 @@ abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
     @StyleRes
     protected abstract fun getThemeID(): Int
 
-    private lateinit var _viewDataBinding: VDB
-    protected val viewDataBinding get() = _viewDataBinding
+    private lateinit var _binding: VDB
+    protected val binding get() = _binding
 
     protected abstract val viewModel: BaseViewModel
     protected open val viewModelBindingVariable get() = BR.viewModel
@@ -25,7 +25,7 @@ abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(getThemeID())
-        _viewDataBinding = DataBindingUtil.setContentView<VDB>(this, getLayoutID()).apply {
+        _binding = DataBindingUtil.setContentView<VDB>(this, getLayoutID()).apply {
             setVariable(viewModelBindingVariable, viewModel)
             lifecycleOwner = this@BaseActivity
         }

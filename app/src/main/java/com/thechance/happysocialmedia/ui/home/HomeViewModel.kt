@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.thechance.happysocialmedia.data.HappySocialRepository
 import com.thechance.happysocialmedia.domain.models.Post
+import com.thechance.happysocialmedia.ui.PostInteractionListener
 import com.thechance.happysocialmedia.ui.base.BaseViewModel
 import com.thechance.happysocialmedia.util.Constants.TAG
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,15 +16,14 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     val repository: HappySocialRepository
-): BaseViewModel(){
+): BaseViewModel(), PostInteractionListener{
 
-    val post = MutableLiveData<List<Post>>()
+    val posts = MutableLiveData<List<Post>>()
 
     init {
         viewModelScope.launch {
             repository.getAllPosts().collect {
-                post.postValue(it)
-                Log.i(TAG, "HomeViewModel: post -----{ $it } ")
+                posts.postValue(it)
             }
         }
     }
