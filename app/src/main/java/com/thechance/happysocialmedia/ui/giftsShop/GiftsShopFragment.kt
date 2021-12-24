@@ -8,7 +8,7 @@ import com.thechance.happysocialmedia.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class GiftShopFragment : BaseFragment<FragmentGiftsShopBinding>() {
+class GiftsShopFragment : BaseFragment<FragmentGiftsShopBinding>() {
     override fun getLayoutID() = R.layout.fragment_gifts_shop
     override val viewModel: GiftsShopViewModel by viewModels()
 }

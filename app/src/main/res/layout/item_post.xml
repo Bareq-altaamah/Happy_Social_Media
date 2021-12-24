@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="item"
+            type="com.thechance.happysocialmedia.domain.models.Post" />
+        <variable
+            name="listener"
+            type="com.thechance.happysocialmedia.ui.profile.ProfilePostInteractionListener" />
 
     </data>
 
@@ -17,19 +23,23 @@
         app:cardCornerRadius="@dimen/radius2x">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+            <ImageView
                 android:id="@+id/image_post"
+                imageUrl="@{item.postImageUrl}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/test_image2"
-                android:orientation="vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/test_image"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <View
                 android:id="@+id/layout_image_profile"
@@ -48,7 +58,8 @@
                 android:elevation="1dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/test_profile"
+                imageUrl="@{item.profileImageUrl}"
+                tools:src="@drawable/test_profile"
                 app:layout_constraintBottom_toBottomOf="@id/layout_image_profile"
                 app:layout_constraintEnd_toEndOf="@id/layout_image_profile"
                 app:layout_constraintStart_toStartOf="@id/layout_image_profile"
@@ -61,11 +72,12 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin1x"
                 android:layout_marginStart="4dp"
-                android:elevation="3dp"
                 android:shadowColor="@color/shade_primary_color"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="10"
+                android:textColor="@android:color/white"
+                android:text="@{item.name}"
                 tools:textAppearance="@style/TextAppearance.App.Title"
                 app:layout_constraintBottom_toBottomOf="@+id/layout_image_profile"
                 app:layout_constraintStart_toEndOf="@id/layout_image_profile"
@@ -73,26 +85,31 @@
                 tools:text="Shahad Abdulhasan" />
 
             <View
-                android:id="@+id/layout_bottom_shadow"
+                android:id="@+id/view_bottom_shadow"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@drawable/shape_shadow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="@id/label_post" />
+                app:layout_constraintTop_toBottomOf="@id/image_profile"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
-                android:id="@+id/label_post"
+                android:id="@+id/label_post_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:maxLines="3"
                 android:padding="@dimen/margin2x"
-                tools:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                tools:textColor="@android:color/white"
+                android:text="@{item.content}"
+                android:gravity="bottom"
+                android:textColor="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@id/button_down_vote"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_image_profile"
-                app:layout_constraintVertical_bias="1"
-                tools:text="Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet is a library of basic Material Design 2 styles and components. " />
+                app:layout_constraintTop_toTopOf="@+id/view_bottom_shadow"
+                tools:text="Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet is a library of basic Material Design 2 styles and components. "
+                tools:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
             <TextView
                 android:id="@+id/label_date"
@@ -100,7 +117,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin2x"
                 android:alpha="0.6"
-                tools:textAppearance="@style/TextAppearance.App.SubTitle"
+                android:text="@{item.date}"
+                android:textAppearance="@style/TextAppearance.App.SubTitle"
                 app:layout_constraintBottom_toBottomOf="@+id/button_upvote"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/button_upvote"
@@ -133,8 +151,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin2x"
                 android:alpha="0.87"
-                tools:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                tools:textColor="@android:color/white"
+                android:text="@{String.valueOf(item.upVote)}"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="@id/button_down_vote"
                 app:layout_constraintEnd_toStartOf="@id/button_down_vote"
                 app:layout_constraintTop_toTopOf="@id/button_down_vote"
@@ -167,8 +186,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin2x"
                 android:alpha="0.87"
-                tools:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                tools:textColor="@android:color/white"
+                android:text="@{String.valueOf(item.downVote)}"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/button_down_vote"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/button_down_vote"

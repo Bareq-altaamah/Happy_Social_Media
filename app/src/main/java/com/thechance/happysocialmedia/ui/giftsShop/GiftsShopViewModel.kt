@@ -7,5 +7,5 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GiftsShopViewModel @Inject constructor(
-    repository: HappySocialRepository
+    val repository: HappySocialRepository
 ): BaseViewModel()

@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    repository: HappySocialRepository
+    val repository: HappySocialRepository
 ): BaseViewModel(){
 
     val post = MutableLiveData<List<Post>>()

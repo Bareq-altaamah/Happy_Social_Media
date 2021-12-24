@@ -1,16 +1,11 @@
 package com.thechance.happysocialmedia.data
 
-import com.thechance.happysocialmedia.data.local.daos.HappySocialDao
-import com.thechance.happysocialmedia.data.remote.HappySocialService
 import com.thechance.happysocialmedia.domain.models.Post
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class FakeRepository @Inject constructor(
-    dao: HappySocialDao,
-    apiService: HappySocialService,
-): HappySocialRepository {
+class FakeRepository @Inject constructor(): HappySocialRepository {
 
     override fun getAllPosts(): Flow<List<Post>> = flow {
         val result = listOf(
@@ -27,7 +22,7 @@ class FakeRepository @Inject constructor(
             Post(
                 1,
                 "Shahad Kadhim",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTseTsqWlAwnmhofR0h-dzTgkGA0XHk5Sb6xlPi0BFOKck-C2_FmW-jGOVgr_Cpk9GsKBQ&usqp=CAU",
+                "https://cdn.britannica.com/q:60/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg",
                 "https://i.pinimg.com/originals/5a/23/d7/5a23d7a5b80c846695b7c92b2876f09e.jpg",
                 "Good Morning Elite Team , How are you?",
                 "2020-7-2",
@@ -49,7 +44,7 @@ class FakeRepository @Inject constructor(
                 "Ahmed Yusef",
                 "https://thumbs.dreamstime.com/b/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg",
                 "https://transportationenergypartners.org/wp-content/uploads/2020/08/random-person-3.jpg",
-                "Good Morning Elite Team , How are you?",
+                "Good Morning Elite Team , How are you?\nGood Morning Elite Team , How are you?\nGood Morning Elite Team , How are you?\nGood Morning Elite Team , How are you?\nGood Morning Elite Team , How are you?\nGood Morning Elite Team , How are you?\nGood Morning Elite Team , How are you?\nGood Morning Elite Team , How are you?",
                 "2045-12-12",
                 2200,
                 30,
