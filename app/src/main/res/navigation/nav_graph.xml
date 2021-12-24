@@ -16,6 +16,11 @@
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search"/>
     <fragment
+        android:id="@+id/giftsShopFragment"
+        android:name="com.thechance.happysocialmedia.ui.giftsShop.GiftsShopFragment"
+        android:label="GiftsShopFragment"
+        tools:layout="@layout/fragment_gifts_shop"/>
+    <fragment
         android:id="@+id/notificationFragment"
         android:name="com.thechance.happysocialmedia.ui.notification.NotificationFragment"
         android:label="NotificationFragment"
@@ -25,4 +30,5 @@
         android:name="com.thechance.happysocialmedia.ui.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
+
 </navigation>

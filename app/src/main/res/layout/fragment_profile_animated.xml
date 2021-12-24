@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.thechance.happysocialmedia.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_color"
+            android:theme="@style/Theme.ScrollingAnimation.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="UserName here"
+                android:background="@color/background_color"
+                app:expandedTitleGravity="center|top"
+                app:expandedTitleMarginTop="224dp"
+                app:contentScrim="@color/tool_bar_color"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:menu="@menu/top_app_bar"
+                app:toolbarId="@+id/toolbar">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="164dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_cover_test"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view_profile_shadow"
+                        android:layout_width="match_parent"
+                        android:layout_height="94dp"
+                        android:background="@drawable/profile_cover_shadow"
+                        app:layout_constraintBottom_toBottomOf="@id/image_cover" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/image_profile"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_cover"
+                        app:layout_constraintEnd_toEndOf="@id/image_cover"
+                        app:layout_constraintStart_toStartOf="@id/image_cover"
+                        app:layout_constraintTop_toBottomOf="@id/image_cover"
+                        app:srcCompat="@drawable/image_profile_test"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize25Percent" />
+
+                    <View
+                        android:id="@+id/view_profile_image_border"
+                        android:layout_width="94dp"
+                        android:layout_height="94dp"
+                        android:background="@drawable/outline_profile_picture_large"
+                        app:layout_constraintStart_toStartOf="@id/image_profile"
+                        app:layout_constraintBottom_toBottomOf="@id/image_profile"
+                        app:layout_constraintEnd_toEndOf="@id/image_profile"
+                        app:layout_constraintTop_toTopOf="@id/image_profile" />
+
+                    <TextView
+                        android:id="@+id/label_bio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Happiness is waiting for you ☺."
+                        android:textColor="@color/shade_ternary_color"
+                        android:textSize="12sp"
+                        android:layout_marginTop="56dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/image_profile" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/status_container"
+                        style="?attr/materialCardViewFilledStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginHorizontal="@dimen/spacingMedium"
+                        android:layout_marginTop="@dimen/spacingExtraLarge"
+                        app:cardBackgroundColor="@color/card_background_color"
+                        app:cardCornerRadius="@dimen/cornerRadiusMedium"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_bio" />
+
+                    <TextView
+                        android:id="@+id/label_followers_numbers"
+                        style="@style/TextViewNumber.TextAppearance"
+                        android:layout_marginTop="@dimen/spacingMedium"
+                        android:text="2.51k"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintEnd_toStartOf="@id/label_following_numbers"
+                        app:layout_constraintStart_toStartOf="@id/status_container"
+                        app:layout_constraintTop_toTopOf="@id/status_container" />
+
+                    <TextView
+                        android:id="@+id/label_followers"
+                        style="@style/TextViewStatus.TextAppearance"
+                        android:text="@string/followers"
+                        app:layout_constraintEnd_toEndOf="@id/label_followers_numbers"
+                        app:layout_constraintStart_toStartOf="@id/label_followers_numbers"
+                        app:layout_constraintTop_toBottomOf="@id/label_followers_numbers" />
+
+                    <TextView
+                        android:id="@+id/label_following_numbers"
+                        style="@style/TextViewNumber.TextAppearance"
+                        android:text="2.10k"
+                        app:layout_constraintBottom_toBottomOf="@id/label_followers_numbers"
+                        app:layout_constraintEnd_toStartOf="@id/label_up_vote_numbers"
+                        app:layout_constraintStart_toEndOf="@id/label_followers_numbers"
+                        app:layout_constraintTop_toTopOf="@id/label_followers_numbers" />
+
+                    <TextView
+                        android:id="@+id/label_following"
+                        style="@style/TextViewStatus.TextAppearance"
+                        android:text="@string/following"
+                        app:layout_constraintEnd_toEndOf="@id/label_following_numbers"
+                        app:layout_constraintStart_toStartOf="@id/label_following_numbers"
+                        app:layout_constraintTop_toBottomOf="@id/label_following_numbers" />
+
+                    <TextView
+                        android:id="@+id/label_up_vote_numbers"
+                        style="@style/TextViewNumber.TextAppearance"
+                        android:text="2.5k"
+                        app:layout_constraintBottom_toBottomOf="@id/label_following_numbers"
+                        app:layout_constraintEnd_toStartOf="@id/label_down_vote_numbers"
+                        app:layout_constraintStart_toEndOf="@id/label_following_numbers"
+                        app:layout_constraintTop_toTopOf="@id/label_following_numbers" />
+
+                    <TextView
+                        android:id="@+id/label_up_vote"
+                        style="@style/TextViewStatus.TextAppearance"
+                        android:text="@string/up_vote"
+                        app:layout_constraintEnd_toEndOf="@id/label_up_vote_numbers"
+                        app:layout_constraintStart_toStartOf="@id/label_up_vote_numbers"
+                        app:layout_constraintTop_toBottomOf="@id/label_up_vote_numbers" />
+
+                    <TextView
+                        android:id="@+id/label_down_vote_numbers"
+                        style="@style/TextViewNumber.TextAppearance"
+                        android:text="2.9k"
+                        app:layout_constraintBottom_toBottomOf="@id/label_up_vote_numbers"
+                        app:layout_constraintEnd_toEndOf="@id/status_container"
+                        app:layout_constraintStart_toEndOf="@id/label_up_vote_numbers"
+                        app:layout_constraintTop_toTopOf="@id/label_up_vote_numbers" />
+
+                    <TextView
+                        android:id="@+id/label_down_vote"
+                        style="@style/TextViewStatus.TextAppearance"
+                        android:text="@string/down_vote"
+                        app:layout_constraintEnd_toEndOf="@id/label_down_vote_numbers"
+                        app:layout_constraintStart_toStartOf="@id/label_down_vote_numbers"
+                        app:layout_constraintTop_toBottomOf="@id/label_down_vote_numbers" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:menu="@menu/top_app_bar"
+                    app:layout_collapseMode="pin" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_profile_post"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                items="@{viewModel.posts}"
+                tools:listitem="@layout/item_post" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

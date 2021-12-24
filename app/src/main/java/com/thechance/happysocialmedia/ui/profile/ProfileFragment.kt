@@ -1,15 +1,21 @@
 package com.thechance.happysocialmedia.ui.profile
 
-import androidx.fragment.app.viewModels
+import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.activityViewModels
 import com.thechance.happysocialmedia.R
-import com.thechance.happysocialmedia.databinding.FragmentProfileBinding
+import com.thechance.happysocialmedia.databinding.FragmentProfileAnimatedBinding
 import com.thechance.happysocialmedia.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>() {
+class ProfileFragment : BaseFragment<FragmentProfileAnimatedBinding>() {
 
-    override fun getLayoutId() = R.layout.fragment_profile
-    override val viewModel: ProfileViewModel by viewModels()
+    override fun getLayoutID() = R.layout.fragment_profile_animated
+    override val viewModel: ProfileViewModel by activityViewModels()
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.recyclerProfilePost.adapter = ProfilePostsAdapter(viewModel.posts.value.orEmpty(), viewModel)
+    }
 }

@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Happy Social Media</string>
+    <string name="app_name">Happy</string>
+    <string name="chat">Chat</string>
+    <string name="following">Following</string>
+    <string name="up_vote">Up Votes</string>
+    <string name="down_vote">Down Votes</string>
+    <string name="followers">Followers</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="gifts">Gifts</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
 </resources>
