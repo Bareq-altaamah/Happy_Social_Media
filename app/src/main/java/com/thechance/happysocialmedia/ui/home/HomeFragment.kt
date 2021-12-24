@@ -3,6 +3,7 @@ package com.thechance.happysocialmedia.ui.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
 import com.thechance.happysocialmedia.R
 import com.thechance.happysocialmedia.databinding.FragmentHomeBinding
 import com.thechance.happysocialmedia.ui.base.BaseFragment
@@ -17,6 +18,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerProfilePost.adapter = ProfilePostsAdapter(viewModel.posts.value.orEmpty(), viewModel)
+        listenToRecyclerScrolls()
+        binding.recyclerHomePost.adapter = ProfilePostsAdapter(viewModel.posts.value.orEmpty(), viewModel)
+    }
+
+    private fun listenToRecyclerScrolls(){
+        binding.recyclerHomePost.addOnScrollListener(customScrollListener)
+    }
+
+    //TODO: improve this later
+    private val customScrollListener = object : RecyclerView.OnScrollListener(){
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            super.onScrolled(recyclerView, dx, dy)
+            if (dy > 0) {
+                viewModel.setScrollUp()
+            } else {
+                viewModel.setScrollDown()
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.thechance.happysocialmedia.ui.home
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.thechance.happysocialmedia.data.HappySocialRepository
@@ -20,6 +21,9 @@ class HomeViewModel @Inject constructor(
 
     val posts = MutableLiveData<List<Post>>()
 
+    private val _isScrollingUp = MutableLiveData(true)
+    val isScrollingUp: LiveData<Boolean> = _isScrollingUp
+
     init {
         viewModelScope.launch {
             repository.getAllPosts().collect {
@@ -27,4 +31,7 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    fun setScrollUp() = _isScrollingUp.postValue(true)
+    fun setScrollDown() = _isScrollingUp.postValue(false)
 }
