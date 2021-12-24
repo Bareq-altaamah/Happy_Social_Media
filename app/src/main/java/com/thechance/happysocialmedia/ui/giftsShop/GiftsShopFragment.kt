@@ -3,7 +3,6 @@ package com.thechance.happysocialmedia.ui.giftsShop
 import androidx.fragment.app.viewModels
 import com.thechance.happysocialmedia.R
 import com.thechance.happysocialmedia.databinding.FragmentGiftsShopBinding
-import com.thechance.happysocialmedia.databinding.FragmentSearchBinding
 import com.thechance.happysocialmedia.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 

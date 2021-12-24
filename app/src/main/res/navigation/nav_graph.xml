@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_search"/>
     <fragment
         android:id="@+id/giftsShopFragment"
-        android:name="com.thechance.happysocialmedia.ui.giftsShop.GiftShopFragment"
+        android:name="com.thechance.happysocialmedia.ui.giftsShop.GiftsShopFragment"
         android:label="GiftsShopFragment"
         tools:layout="@layout/fragment_gifts_shop"/>
     <fragment

@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin1x">8dp</dimen>
-    <dimen name="margin2x">12dp</dimen>
-    <dimen name="margin3x">16dp</dimen>
-    <dimen name="margin5x">24dp</dimen>
-    <dimen name="margin7x">32dp</dimen>
+    <dimen name="spacingSmall">8dp</dimen>
+    <dimen name="spacingMedium">16dp</dimen>
+    <dimen name="spacingLarge">24dp</dimen>
+    <dimen name="spacingExtraLarge">32dp</dimen>
 
-    <dimen name="radius1x">6dp</dimen>
-    <dimen name="radius2x">12dp</dimen>
-    <dimen name="radius3x">18dp</dimen>
-    <dimen name="radius4x">24dp</dimen>
+    <dimen name="cornerRadiusSmall">6dp</dimen>
+    <dimen name="cornerRadiusMedium">12dp</dimen>
+    <dimen name="cornerRadiusLarge">18dp</dimen>
+    <dimen name="cornerRadiusExtraLarge">24dp</dimen>
 
-    <dimen name="size_12">12sp</dimen>
-    <dimen name="size_14">14sp</dimen>
-    <dimen name="size_18">18sp</dimen>
-    <dimen name="size_22">22sp</dimen>
-
-    <dimen name="elevation1x">8dp</dimen>
-    <dimen name="size28dp">28dp</dimen>
-    <dimen name="size24dp">24dp</dimen>
-    <dimen name="size48dp">48dp</dimen>
 </resources>

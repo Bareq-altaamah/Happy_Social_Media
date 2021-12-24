@@ -15,7 +15,7 @@
     </style>
 
     <style name="TextViewNumber.TextAppearance" parent="">
-        <item name="android:textSize">@dimen/size_14</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
@@ -26,13 +26,18 @@
         <item name="android:layout_marginTop">1dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/shade_secondary_color</item>
     </style>
 
-    <style name="ShapeAppearanceOverlay.App.CornerSize24Percent" parent="">
-        <item name="cornerSize">@dimen/size_18</item>
+    <style name="ShapeAppearanceOverlay.App.CornerSize25Percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25%</item>
     </style>
+
+    <style name="Theme.ScrollingAnimation.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ScrollingAnimation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
