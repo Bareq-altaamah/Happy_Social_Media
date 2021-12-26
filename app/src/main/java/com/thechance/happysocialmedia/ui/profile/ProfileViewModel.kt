@@ -26,4 +26,16 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
+    override fun onClickItem() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onClickDownVote() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onClickUpVote() {
+        TODO("Not yet implemented")
+    }
+
 }
