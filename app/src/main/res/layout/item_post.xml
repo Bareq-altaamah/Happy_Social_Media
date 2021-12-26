@@ -141,11 +141,11 @@
                 app:icon="@drawable/ic_baseline_keyboard_arrow_up_24"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconTint="@color/brand_color"
+                app:isButtonChecked="@{item.upVoteChecked}"
                 app:layout_constraintBottom_toBottomOf="@id/label_upvote"
                 app:layout_constraintEnd_toStartOf="@id/label_upvote"
                 app:layout_constraintTop_toTopOf="@id/label_upvote"
-                app:strokeColor="@color/brand_color" />
+                 />
 
             <TextView
                 android:id="@+id/label_upvote"
@@ -177,7 +177,7 @@
                 app:icon="@drawable/ic_baseline_keyboard_arrow_down_24"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:iconTint="@android:color/white"
+                app:isButtonChecked="@{item.downVoteChecked}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/label_down_vote" />
 
