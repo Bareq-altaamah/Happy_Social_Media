@@ -1,6 +1,7 @@
 package com.thechance.happysocialmedia.data
 
 import com.thechance.happysocialmedia.domain.models.Post
+import com.thechance.happysocialmedia.domain.models.User
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -111,6 +112,11 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
             ),
 
         )
+        emit(result)
+    }
+
+    override fun getUserByName(name: String): Flow<List<User>> = flow {
+        val result = DataStore.users.filter { user -> user.name.contains(name) }
         emit(result)
     }
 }
