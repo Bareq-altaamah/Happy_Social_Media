@@ -6,8 +6,8 @@ data class User(
     val profileImageUrl: String,
     val coverImageUrl: String,
     val bio: String,
-    val followers: Int,
-    val following: Int,
-    val upVote: Int,
-    val downVote: Int,
+    val followers: String,
+    val following: String,
+    val upVote: String,
+    val downVote: String,
 )
