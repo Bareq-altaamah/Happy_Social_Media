@@ -27,7 +27,8 @@
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:title="UserName here"
+                tools:title="UserName here"
+                app:title="@{viewModel.user.name}"
                 android:background="@color/background_color"
                 app:expandedTitleGravity="center|top"
                 app:expandedTitleMarginTop="224dp"
@@ -46,7 +47,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="164dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/image_cover_test"
+                        tools:src="@drawable/image_cover_test"
+                        imageUrl="@{viewModel.user.coverImageUrl}"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
@@ -65,7 +67,8 @@
                         app:layout_constraintEnd_toEndOf="@id/image_cover"
                         app:layout_constraintStart_toStartOf="@id/image_cover"
                         app:layout_constraintTop_toBottomOf="@id/image_cover"
-                        app:srcCompat="@drawable/image_profile_test"
+                        tools:srcCompat="@drawable/image_profile_test"
+                        imageUrl="@{viewModel.user.profileImageUrl}"
                         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize25Percent" />
 
                     <View
@@ -83,7 +86,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Happiness is waiting for you ☺."
+                        tools:text="Happiness is waiting for you ☺."
+                        android:text="@{viewModel.user.bio}"
                         android:textColor="@color/shade_ternary_color"
                         android:textSize="12sp"
                         android:layout_marginTop="56dp"
@@ -110,7 +114,8 @@
                         android:id="@+id/label_followers_numbers"
                         style="@style/TextViewNumber.TextAppearance"
                         android:layout_marginTop="@dimen/spacingMedium"
-                        android:text="2.51k"
+                        tools:text="2.51k"
+                        android:text="@{viewModel.user.followers}"
                         app:layout_constraintHorizontal_chainStyle="spread"
                         app:layout_constraintEnd_toStartOf="@id/label_following_numbers"
                         app:layout_constraintStart_toStartOf="@id/status_container"
@@ -127,7 +132,8 @@
                     <TextView
                         android:id="@+id/label_following_numbers"
                         style="@style/TextViewNumber.TextAppearance"
-                        android:text="2.10k"
+                        tools:text="2.10k"
+                        android:text="@{viewModel.user.following}"
                         app:layout_constraintBottom_toBottomOf="@id/label_followers_numbers"
                         app:layout_constraintEnd_toStartOf="@id/label_up_vote_numbers"
                         app:layout_constraintStart_toEndOf="@id/label_followers_numbers"
@@ -144,7 +150,8 @@
                     <TextView
                         android:id="@+id/label_up_vote_numbers"
                         style="@style/TextViewNumber.TextAppearance"
-                        android:text="2.5k"
+                        tools:text="2.5k"
+                        android:text="@{viewModel.user.upVote}"
                         app:layout_constraintBottom_toBottomOf="@id/label_following_numbers"
                         app:layout_constraintEnd_toStartOf="@id/label_down_vote_numbers"
                         app:layout_constraintStart_toEndOf="@id/label_following_numbers"
@@ -161,7 +168,8 @@
                     <TextView
                         android:id="@+id/label_down_vote_numbers"
                         style="@style/TextViewNumber.TextAppearance"
-                        android:text="2.9k"
+                        tools:text="2.9k"
+                        android:text="@{viewModel.user.downVote}"
                         app:layout_constraintBottom_toBottomOf="@id/label_up_vote_numbers"
                         app:layout_constraintEnd_toEndOf="@id/status_container"
                         app:layout_constraintStart_toEndOf="@id/label_up_vote_numbers"
