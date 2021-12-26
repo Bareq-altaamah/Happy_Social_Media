@@ -35,21 +35,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/spacingMedium"
-                android:maxLines="2"
                 android:text="Sahar Qais mentioned you in a comment in a thread"
                 android:textColor="@color/shade_secondary_color"
                 android:textSize="14sp"
-                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintEnd_toStartOf="@+id/image_notify"
                 app:layout_constraintStart_toEndOf="@+id/image_profile"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <ImageView
                 android:id="@+id/image_notify"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
                 android:layout_marginEnd="@dimen/spacingLarge"
-                android:background="@color/brand_color"
+                android:src="@drawable/circle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -61,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/spacingMedium"
                 android:text="1 min ago"
+                android:textSize="12sp"
                 android:textColor="@color/shade_ternary_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/label_notification"
