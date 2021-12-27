@@ -1,5 +1,6 @@
 package com.thechance.happysocialmedia.ui.profile
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -16,7 +17,9 @@ import javax.inject.Inject
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
     repository: HappySocialRepository
-): BaseViewModel(), PostInteractionListener {
+) : BaseViewModel(), PostInteractionListener {
+
+    val isScroll = MutableLiveData(true)
 
     val posts = MutableLiveData<List<Post>>()
     val user = repository.getCurrentUserInfo().asLiveData(Dispatchers.IO)
