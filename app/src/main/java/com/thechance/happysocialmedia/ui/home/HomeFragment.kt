@@ -18,23 +18,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        listenToRecyclerScrolls()
         binding.recyclerHomePost.adapter = ProfilePostsAdapter(viewModel.posts.value.orEmpty(), viewModel)
-    }
-
-    private fun listenToRecyclerScrolls(){
-        binding.recyclerHomePost.addOnScrollListener(customScrollListener)
-    }
-
-    //TODO: improve this later
-    private val customScrollListener = object : RecyclerView.OnScrollListener(){
-        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-            super.onScrolled(recyclerView, dx, dy)
-            if (dy > 0) {
-                viewModel.setScrollUp()
-            } else {
-                viewModel.setScrollDown()
-            }
-        }
     }
 }

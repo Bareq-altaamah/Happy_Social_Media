@@ -20,6 +20,7 @@
             android:orientation="vertical"
             android:paddingBottom="64dp"
             android:clipToPadding="false"
+            app:setScrollingState="@={viewModel.isScrolling}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             items="@{viewModel.posts}"
             tools:listitem="@layout/item_post" />
@@ -32,7 +33,7 @@
             android:layout_margin="@dimen/spacingMedium"
             android:text="@string/new_post"
             app:icon="@drawable/ic_pencil"
-            app:extended="@{!viewModel.isScrollingUp}"
+            app:extended="@{viewModel.isScrolling}"
             android:textColor="@android:color/white"
             app:iconTint="@android:color/white"
             app:backgroundTint="@color/brand_color"

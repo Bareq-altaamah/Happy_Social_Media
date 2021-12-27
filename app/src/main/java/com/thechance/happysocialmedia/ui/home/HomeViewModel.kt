@@ -17,12 +17,11 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     val repository: HappySocialRepository
-): BaseViewModel(), PostInteractionListener{
+) : BaseViewModel(), PostInteractionListener {
+
+    val isScrolling = MutableLiveData(true)
 
     val posts = MutableLiveData<List<Post>>()
-
-    private val _isScrollingUp = MutableLiveData(true)
-    val isScrollingUp: LiveData<Boolean> = _isScrollingUp
 
     init {
         viewModelScope.launch {
@@ -31,7 +30,4 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
-
-    fun setScrollUp() = _isScrollingUp.postValue(true)
-    fun setScrollDown() = _isScrollingUp.postValue(false)
 }
