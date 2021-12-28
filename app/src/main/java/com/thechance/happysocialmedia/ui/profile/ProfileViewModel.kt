@@ -16,15 +16,9 @@ class ProfileViewModel @Inject constructor(
     repository: HappySocialRepository
 ): BaseViewModel(), PostInteractionListener {
 
-    val posts = MutableLiveData<List<Post>>()
+    val user = repository.getCurrentUserInfo().asLiveData(Dispatchers.IO)
+    val posts = repository.getAllPosts().asLiveData(Dispatchers.IO)
 
-    init {
-        viewModelScope.launch {
-            repository.getAllPosts().collect {
-                posts.postValue(it)
-            }
-        }
-    }
 
     override fun onClickItem() {
         TODO("Not yet implemented")

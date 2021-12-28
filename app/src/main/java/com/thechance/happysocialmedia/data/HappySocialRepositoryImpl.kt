@@ -15,6 +15,10 @@ class HappySocialRepositoryImpl @Inject constructor(
         TODO("Not yet implemented")
     }
 
+    override fun getCurrentUserInfo(): Flow<User> {
+        TODO("Not yet implemented")
+    }
+
     override fun getUserByName(name: String): Flow<List<User>> {
         TODO("Not yet implemented")
     }
