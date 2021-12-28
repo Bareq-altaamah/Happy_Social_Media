@@ -1,6 +1,7 @@
 package com.thechance.happysocialmedia.data
 
 import com.thechance.happysocialmedia.domain.models.Post
+import com.thechance.happysocialmedia.domain.models.User
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -132,5 +133,20 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
 
         )
         emit(result)
+    }
+
+    override fun getCurrentUserInfo(): Flow<User> = flow {
+        val user = User(
+            0,
+            "Ahmed Yusef",
+            "https://transportationenergypartners.org/wp-content/uploads/2020/08/random-person-3.jpg",
+            "https://images.unsplash.com/photo-1480365501497-199581be0e66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGhvdG9zfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+            "I am Fine ☺",
+            "350",
+            "200",
+            "145",
+            "326",
+        )
+        emit(user)
     }
 }
