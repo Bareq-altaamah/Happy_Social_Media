@@ -22,4 +22,16 @@ class HomeViewModel @Inject constructor(
 
     fun setScrollUp() = _isScrollingUp.postValue(true)
     fun setScrollDown() = _isScrollingUp.postValue(false)
+
+    override fun onClickItem() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onClickDownVote() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onClickUpVote() {
+        TODO("Not yet implemented")
+    }
 }
