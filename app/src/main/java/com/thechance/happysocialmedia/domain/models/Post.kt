@@ -7,6 +7,8 @@ data class Post(
     val profileImageUrl: String,
     val content: String,
     val date: String,
-    val upVote: Int,
-    val downVote: Int,
+    val upVote: String,
+    val downVote: String,
+    val upVoteChecked: Boolean = false,
+    val downVoteChecked: Boolean = false,
 )

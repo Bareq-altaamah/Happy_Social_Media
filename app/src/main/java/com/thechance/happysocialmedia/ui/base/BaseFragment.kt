@@ -12,13 +12,13 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.thechance.happysocialmedia.BR
 import com.thechance.happysocialmedia.R
+import com.thechance.happysocialmedia.ui.main.MainActivity
 
 abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
     @LayoutRes
     protected abstract fun getLayoutID(): Int
 
-    @StringRes
-    protected open fun getScreenTitle(): Int = R.string.chat
+    protected open val useDefaultAppBar: Boolean = true
 
     private lateinit var _binding: VDB
     protected val binding get() = _binding
@@ -35,7 +35,7 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
             setVariable(viewModelBindingVariable, viewModel)
             lifecycleOwner = viewLifecycleOwner
         }
-        (activity as AppCompatActivity).supportActionBar?.title = getString(getScreenTitle())
+        (activity as MainActivity).setDefualtAppBarVisiblity(useDefaultAppBar)
         return _binding.root
     }
 }

@@ -36,6 +36,7 @@
         <item name="cornerSize">25%</item>
     </style>
 
+
     <style name="Theme.ScrollingAnimation.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ScrollingAnimation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
