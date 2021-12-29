@@ -176,6 +176,7 @@
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/appbar_shape_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -184,8 +185,10 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:layoutDirection="rtl"
                 app:menu="@menu/back_arrow_app_bar"
-                android:background="@drawable/appbar_shape_shadow" />
+                app:title="@string/post"
+                app:titleCentered="true" />
 
         </com.google.android.material.appbar.AppBarLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
