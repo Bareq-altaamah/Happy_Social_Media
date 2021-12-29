@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/item_search_image"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
@@ -32,7 +32,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize25Percent" />
 
             <TextView
                 android:id="@+id/user_name"
@@ -40,8 +41,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/shade_secondary_color"
+                android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@id/item_search_image"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Shahad Abdulhasan" />
@@ -50,14 +52,14 @@
                 android:id="@+id/user_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
                 android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/shade_ternary_color"
-                app:layout_constraintTop_toBottomOf="@id/user_name"
-                app:layout_constraintStart_toStartOf="@id/user_name"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:text="Good Morning "
-                />
+                app:layout_constraintStart_toStartOf="@id/user_name"
+                app:layout_constraintTop_toBottomOf="@id/user_name"
+                tools:text="Good Morning " />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

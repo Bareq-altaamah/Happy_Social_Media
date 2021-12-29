@@ -89,8 +89,9 @@
                         tools:text="Happiness is waiting for you ☺."
                         android:text="@{viewModel.user.bio}"
                         android:textColor="@color/shade_ternary_color"
+                        android:fontFamily="@font/poppins_regular"
                         android:textSize="12sp"
-                        android:layout_marginTop="56dp"
+                        android:layout_marginTop="45dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/image_profile" />
@@ -115,6 +116,7 @@
                         style="@style/TextViewNumber.TextAppearance"
                         android:layout_marginTop="@dimen/spacingMedium"
                         tools:text="2.51k"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="@{viewModel.user.followers}"
                         app:layout_constraintHorizontal_chainStyle="spread"
                         app:layout_constraintEnd_toStartOf="@id/label_following_numbers"
@@ -125,6 +127,7 @@
                         android:id="@+id/label_followers"
                         style="@style/TextViewStatus.TextAppearance"
                         android:text="@string/followers"
+
                         app:layout_constraintEnd_toEndOf="@id/label_followers_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_followers_numbers"
                         app:layout_constraintTop_toBottomOf="@id/label_followers_numbers" />
@@ -134,6 +137,7 @@
                         style="@style/TextViewNumber.TextAppearance"
                         tools:text="2.10k"
                         android:text="@{viewModel.user.following}"
+                        android:fontFamily="@font/poppins_semibold"
                         app:layout_constraintBottom_toBottomOf="@id/label_followers_numbers"
                         app:layout_constraintEnd_toStartOf="@id/label_up_vote_numbers"
                         app:layout_constraintStart_toEndOf="@id/label_followers_numbers"
@@ -143,6 +147,7 @@
                         android:id="@+id/label_following"
                         style="@style/TextViewStatus.TextAppearance"
                         android:text="@string/following"
+                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toEndOf="@id/label_following_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_following_numbers"
                         app:layout_constraintTop_toBottomOf="@id/label_following_numbers" />
@@ -152,6 +157,7 @@
                         style="@style/TextViewNumber.TextAppearance"
                         tools:text="2.5k"
                         android:text="@{viewModel.user.upVote}"
+                        android:fontFamily="@font/poppins_semibold"
                         app:layout_constraintBottom_toBottomOf="@id/label_following_numbers"
                         app:layout_constraintEnd_toStartOf="@id/label_down_vote_numbers"
                         app:layout_constraintStart_toEndOf="@id/label_following_numbers"
@@ -161,6 +167,7 @@
                         android:id="@+id/label_up_vote"
                         style="@style/TextViewStatus.TextAppearance"
                         android:text="@string/up_vote"
+                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toEndOf="@id/label_up_vote_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_up_vote_numbers"
                         app:layout_constraintTop_toBottomOf="@id/label_up_vote_numbers" />
@@ -170,6 +177,7 @@
                         style="@style/TextViewNumber.TextAppearance"
                         tools:text="2.9k"
                         android:text="@{viewModel.user.downVote}"
+                        android:fontFamily="@font/poppins_semibold"
                         app:layout_constraintBottom_toBottomOf="@id/label_up_vote_numbers"
                         app:layout_constraintEnd_toEndOf="@id/status_container"
                         app:layout_constraintStart_toEndOf="@id/label_up_vote_numbers"
@@ -179,6 +187,7 @@
                         android:id="@+id/label_down_vote"
                         style="@style/TextViewStatus.TextAppearance"
                         android:text="@string/down_vote"
+                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toEndOf="@id/label_down_vote_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_down_vote_numbers"
                         app:layout_constraintTop_toBottomOf="@id/label_down_vote_numbers" />

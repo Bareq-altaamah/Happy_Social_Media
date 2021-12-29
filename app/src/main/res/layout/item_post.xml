@@ -41,8 +41,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
-
-
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_profile"
                 android:layout_width="40dp"
@@ -76,6 +74,7 @@
                 android:shadowDy="0"
                 android:padding="@dimen/spacingSmall"
                 android:shadowRadius="16"
+                android:fontFamily="@font/poppins_semibold"
                 android:textColor="@android:color/white"
                 android:text="@{item.name}"
                 android:textStyle="bold"
@@ -104,6 +103,7 @@
                 android:paddingVertical="@dimen/spacingSmall"
                 android:text="@{item.content}"
                 android:gravity="bottom"
+                android:fontFamily="@font/poppins_regular"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@id/button_down_vote"
@@ -122,6 +122,7 @@
                 android:text="@{item.date}"
                 android:textColor="@android:color/white"
                 android:textSize="10sp"
+                android:fontFamily="@font/poppins_regular"
                 app:layout_constraintBottom_toBottomOf="@+id/button_upvote"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/button_upvote"
@@ -154,6 +155,7 @@
                 android:layout_marginEnd="@dimen/spacingMedium"
                 android:alpha="0.87"
                 android:text="@{item.upVote}"
+                android:fontFamily="@font/poppins_regular"
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                 android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="@id/button_down_vote"
@@ -188,6 +190,7 @@
                 android:layout_marginEnd="@dimen/spacingMedium"
                 android:alpha="0.87"
                 android:text="@{item.downVote}"
+                android:fontFamily="@font/poppins_regular"
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                 android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/button_down_vote"
