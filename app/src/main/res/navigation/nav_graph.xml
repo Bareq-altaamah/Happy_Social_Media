@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/postFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -29,6 +29,11 @@
         android:id="@+id/profileFragment"
         android:name="com.thechance.happysocialmedia.ui.profile.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile_animated"/>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.thechance.happysocialmedia.ui.post.PostFragment"
+        android:label="PostFragment"
+        tools:layout="@layout/fragment_post"/>
 
 </navigation>
