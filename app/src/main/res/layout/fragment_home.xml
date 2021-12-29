@@ -15,13 +15,16 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_home_post"
+            items="@{viewModel.posts}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:orientation="vertical"
             android:paddingBottom="64dp"
-            android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            items="@{viewModel.posts}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_post" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
