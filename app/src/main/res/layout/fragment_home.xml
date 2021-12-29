@@ -20,7 +20,7 @@
             android:orientation="vertical"
             android:paddingBottom="64dp"
             android:clipToPadding="false"
-            app:setScrollingState="@={viewModel.isScrolling}"
+            app:setScrollState="@={viewModel.isScrolling}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             items="@{viewModel.posts}"
             tools:listitem="@layout/item_post" />
