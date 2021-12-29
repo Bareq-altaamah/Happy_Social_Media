@@ -9,7 +9,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class PostFragment : BaseFragment<FragmentPostBinding>() {
     override fun getLayoutID() = R.layout.fragment_post
-
+    override val useDefaultAppBar: Boolean
+        get() = false
     override val viewModel: PostViewModel by viewModels()
 
 }
