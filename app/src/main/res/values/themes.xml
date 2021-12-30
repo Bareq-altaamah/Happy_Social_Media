@@ -42,11 +42,9 @@
     <style name="Theme.ScrollingAnimation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Floating_Action_Button">
-        <item name="android:layout_margin">@dimen/spacingMedium</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="backgroundTint">@color/brand_color</item>
-        <item name="layout_constraintEnd_toEndOf">parent</item>
-        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="iconTint">@android:color/white</item>
     </style>
 
 </resources>

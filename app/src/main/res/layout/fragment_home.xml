@@ -29,9 +29,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/new_post"
-            app:icon="@drawable/ic_pencil"
-            app:iconTint="@android:color/white"
             app:extended="@{!viewModel.isScrollingUp}"
+            app:icon="@drawable/ic_pencil"
+            android:layout_margin="@dimen/spacingMedium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
