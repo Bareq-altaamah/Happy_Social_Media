@@ -41,4 +41,10 @@
 
     <style name="Theme.ScrollingAnimation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Floating_Action_Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="backgroundTint">@color/brand_color</item>
+        <item name="iconTint">@android:color/white</item>
+    </style>
+
 </resources>
