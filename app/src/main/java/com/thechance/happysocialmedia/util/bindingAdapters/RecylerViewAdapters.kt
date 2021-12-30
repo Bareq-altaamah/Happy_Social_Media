@@ -27,6 +27,7 @@ fun onScrollListener(recyclerView: RecyclerView, onChangeListener: InverseBindin
     recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
             onChangeListener.onChange()
+
         }
     })
 }
