@@ -19,7 +19,7 @@ fun setScrollState(recyclerView: RecyclerView, value: Boolean) {
 
 @InverseBindingAdapter(attribute = "setScrollState", event = "onScrollListener")
 fun getScrollState(recyclerView: RecyclerView): Boolean {
-    return !recyclerView.canScrollVertically(-1)
+    return recyclerView.scrollState == 0
 }
 
 @BindingAdapter("onScrollListener")
