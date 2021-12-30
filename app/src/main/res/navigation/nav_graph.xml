@@ -32,8 +32,8 @@
         tools:layout="@layout/fragment_profile_animated"/>
     <fragment
         android:id="@+id/postFragment"
-        android:name="com.thechance.happysocialmedia.ui.post.PostFragment"
+        android:name="com.thechance.happysocialmedia.ui.postDetails.PostDetailsFragment"
         android:label="PostFragment"
-        tools:layout="@layout/fragment_post"/>
+        tools:layout="@layout/fragment_post_details"/>
 
 </navigation>
