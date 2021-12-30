@@ -25,7 +25,12 @@
             tools:listitem="@layout/item_post" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            style="@style/ExtendedFloatingActionButton_Style"
+            style="@style/Floating_Action_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_post"
+            app:icon="@drawable/ic_pencil"
+            app:iconTint="@android:color/white"
             app:extended="@{!viewModel.isScrollingUp}"
             tools:ignore="MissingConstraints" />
 

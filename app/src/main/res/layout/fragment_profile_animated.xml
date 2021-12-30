@@ -211,15 +211,5 @@
                 tools:listitem="@layout/item_post" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                style="@style/ExtendedFloatingActionButton_Style"
-                app:extended="@{!viewModel.isScrolling}"
-                tools:ignore="MissingConstraints" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

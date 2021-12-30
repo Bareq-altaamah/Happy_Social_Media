@@ -19,8 +19,6 @@ class ProfileViewModel @Inject constructor(
     repository: HappySocialRepository
 ) : BaseViewModel(), PostInteractionListener {
 
-    val isScrolling = MutableLiveData(true)
-
     val user = repository.getCurrentUserInfo().asLiveData(Dispatchers.IO)
     val posts = repository.getAllPosts().asLiveData(Dispatchers.IO)
 

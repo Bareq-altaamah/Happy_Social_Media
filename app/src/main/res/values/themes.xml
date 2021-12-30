@@ -41,14 +41,9 @@
 
     <style name="Theme.ScrollingAnimation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="ExtendedFloatingActionButton_Style">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="Floating_Action_Button">
         <item name="android:layout_margin">@dimen/spacingMedium</item>
-        <item name="android:text">@string/new_post</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="icon">@drawable/ic_pencil</item>
-        <item name="iconTint">@android:color/white</item>
         <item name="backgroundTint">@color/brand_color</item>
         <item name="layout_constraintEnd_toEndOf">parent</item>
         <item name="layout_constraintBottom_toBottomOf">parent</item>
