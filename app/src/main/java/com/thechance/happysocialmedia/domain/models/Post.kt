@@ -9,6 +9,6 @@ data class Post(
     val date: String,
     val upVote: String,
     val downVote: String,
-    val upVoteChecked: Boolean = false,
-    val downVoteChecked: Boolean = false,
+    val isUpVoted: Boolean = false,
+    val isDownVoted: Boolean = false,
 )

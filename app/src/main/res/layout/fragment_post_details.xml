@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -18,7 +19,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/toolbar_layout"
@@ -27,7 +28,7 @@
                 android:background="@color/background_color"
                 app:contentScrim="@color/tool_bar_color"
                 app:expandedTitleGravity="top"
-                app:expandedTitleMarginTop="16dp"
+                app:expandedTitleMarginTop="@dimen/spacingMedium"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:title="@string/post">
 
@@ -37,7 +38,8 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:scaleType="fitXY"
-                    android:src="@drawable/test_post_image"
+                    imageUrl="@{viewModel.postDetails.postImageUrl}"
+                    tools:src="@drawable/test_image"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.appbar.MaterialToolbar
@@ -58,10 +60,10 @@
                     android:id="@+id/image_profile"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_margin="16dp"
-                    android:elevation="1dp"
+                    android:layout_margin="@dimen/spacingMedium"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/test_profile"
+                    imageUrl="@{viewModel.postDetails.profileImageUrl}"
+                    tools:src="@drawable/test_profile"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize25Percent" />
@@ -78,16 +80,18 @@
 
                 <TextView
                     android:id="@+id/label_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/spacingSmall"
-                    android:text="Shahad Abdulhasan"
+                    tools:text="Shahad Abdulhasan"
+                    android:text="@{viewModel.postDetails.name}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textColor="@color/shade_primary_color"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/layout_image_profile"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/layout_image_profile"
                     app:layout_constraintTop_toTopOf="@+id/layout_image_profile" />
 
@@ -96,7 +100,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacingMedium"
-                    android:text="Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet.Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet.Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. amazing Figma resources for free on your inboxSubscribe This UI sticker sheet.Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet."
+                    android:text="@{viewModel.postDetails.content}"
+                    tools:text="Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet.Subscribe today to receive amazing Figma resources for free "
                     android:textColor="@color/shade_primary_color"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -109,81 +114,62 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacingMedium"
-                    android:alpha="0.6"
-                    android:text="12 March"
-                    android:textColor="@color/shade_primary_color"
+                    tools:text="12 March"
+                    android:layout_marginTop="@dimen/spacingExtraLarge"
+                    android:text="@{viewModel.postDetails.date}"
+                    android:textColor="@color/shade_ternary_color"
                     android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/button_upvote"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button_upvote" />
+                    app:layout_constraintBottom_toBottomOf="@id/button_upvote" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageView
                     android:id="@id/button_upvote"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_margin="@dimen/spacingMedium"
-                    android:insetLeft="0dp"
-                    android:insetTop="0dp"
-                    android:insetRight="0dp"
-                    android:insetBottom="0dp"
-                    android:padding="0dp"
-                    app:icon="@drawable/ic_baseline_keyboard_arrow_up_24"
-                    app:iconGravity="textStart"
-                    app:iconPadding="0dp"
-                    app:iconTint="@color/brand_color"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacingSmall"
+                    android:src="@drawable/ic_upvote"
+                    app:isButtonChecked="@{viewModel.postDetails.isUpVoted}"
+                    tools:tint="@color/brand_color"
                     app:layout_constraintEnd_toStartOf="@id/label_upvote"
-                    app:layout_constraintTop_toBottomOf="@+id/label_post_content"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:strokeColor="@color/brand_color" />
+                    app:layout_constraintTop_toTopOf="@id/label_upvote"
+                    app:layout_constraintBottom_toBottomOf="@id/label_upvote"/>
 
                 <TextView
                     android:id="@+id/label_upvote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/spacingMedium"
-                    android:alpha="0.87"
-                    android:text="3.5 K"
+                    tools:text="3.5 K"
+                    android:text="@{viewModel.postDetails.upVote}"
                     android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                    android:textColor="@color/shade_primary_color"
-                    app:layout_constraintBottom_toBottomOf="@+id/button_upvote"
+                    android:textColor="@color/shade_secondary_color"
                     app:layout_constraintEnd_toStartOf="@id/button_down_vote"
-                    app:layout_constraintTop_toTopOf="@+id/button_upvote" />
+                    app:layout_constraintTop_toTopOf="@id/button_down_vote"
+                    app:layout_constraintBottom_toBottomOf="@id/button_down_vote"/>
 
-                <com.google.android.material.button.MaterialButton
+                <ImageView
                     android:id="@id/button_down_vote"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_margin="@dimen/spacingMedium"
-                    android:insetLeft="0dp"
-                    android:insetTop="0dp"
-                    android:insetRight="0dp"
-                    android:insetBottom="0dp"
-                    android:padding="0dp"
-                    app:icon="@drawable/ic_baseline_keyboard_arrow_up_24"
-                    app:iconGravity="textStart"
-                    app:iconPadding="0dp"
-                    app:iconTint="@color/shade_ternary_color"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_downvote"
+                    android:layout_marginEnd="@dimen/spacingSmall"
+                    app:isButtonChecked="@{viewModel.postDetails.isDownVoted}"
+                    tools:tint="@color/shade_ternary_color"
                     app:layout_constraintEnd_toStartOf="@id/label_down_vote"
-                    app:layout_constraintTop_toBottomOf="@+id/label_post_content"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:strokeColor="@color/shade_ternary_color" />
+                    app:layout_constraintTop_toTopOf="@id/label_down_vote"
+                    app:layout_constraintBottom_toBottomOf="@id/label_down_vote"/>
 
                 <TextView
                     android:id="@+id/label_down_vote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/spacingMedium"
-                    android:alpha="0.87"
-                    android:text="3.5 K"
+                    android:layout_margin="@dimen/spacingMedium"
+                    tools:text="3.5 K"
+                    android:text="@{viewModel.postDetails.downVote}"
                     android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                    android:textColor="@color/shade_primary_color"
-                    app:layout_constraintBottom_toBottomOf="@+id/button_down_vote"
+                    android:textColor="@color/shade_secondary_color"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button_down_vote" />
+                    app:layout_constraintTop_toBottomOf="@id/label_post_content"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.AppBarLayout>

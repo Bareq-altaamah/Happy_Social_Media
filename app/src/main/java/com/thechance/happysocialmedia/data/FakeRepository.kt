@@ -19,8 +19,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2030-12-12",
                 "220",
                 "3",
-                upVoteChecked = true,
-                downVoteChecked = false,
+                isUpVoted = true,
+                isDownVoted = false,
             ),
             Post(
                 1,
@@ -31,8 +31,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2020-7-2",
                 "30",
                 "1",
-                upVoteChecked = true,
-                downVoteChecked = false,
+                isUpVoted = true,
+                isDownVoted = false,
             ),
             Post(
                 2,
@@ -43,8 +43,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2010-1-10",
                 "20",
                 "3",
-                upVoteChecked = false,
-                downVoteChecked = false,
+                isUpVoted = false,
+                isDownVoted = false,
             ),
             Post(
                 3,
@@ -55,8 +55,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2045-12-12",
                 "2200",
                 "30",
-                upVoteChecked = false,
-                downVoteChecked = true,
+                isUpVoted = false,
+                isDownVoted = true,
             ),
             Post(
                 4,
@@ -67,8 +67,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2030-12-12",
                 "220",
                 "3",
-                upVoteChecked = true,
-                downVoteChecked = false,
+                isUpVoted = true,
+                isDownVoted = false,
             ),
             Post(
                 5,
@@ -79,8 +79,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2030-12-12",
                 "9000",
                 "0",
-                upVoteChecked = false,
-                downVoteChecked = true,
+                isUpVoted = false,
+                isDownVoted = true,
             ),
             Post(
                 6,
@@ -91,8 +91,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2022-2-12",
                 "237",
                 "13",
-                upVoteChecked = false,
-                downVoteChecked = true,
+                isUpVoted = false,
+                isDownVoted = true,
             ),
             Post(
                 7,
@@ -103,8 +103,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2021-1-1",
                 "210",
                 "3",
-                upVoteChecked = true,
-                downVoteChecked = false,
+                isUpVoted = true,
+                isDownVoted = false,
             ),
             Post(
                 8,
@@ -115,8 +115,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2030-12-12",
                 "220",
                 "3",
-                upVoteChecked = false,
-                downVoteChecked =true,
+                isUpVoted = false,
+                isDownVoted =true,
             ),
             Post(
                 9,
@@ -127,8 +127,8 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "2030-12-12",
                 "220",
                 "3",
-                upVoteChecked = true,
-                downVoteChecked = false
+                isUpVoted = true,
+                isDownVoted = false
             ),
 
         )
