@@ -36,12 +36,17 @@
         <item name="cornerSize">25%</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.App.CornerSize8dp" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
 
     <style name="Theme.ScrollingAnimation.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ScrollingAnimation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="Floating_Action_Button">
+    <style name="Base.Widget.Material3.ExtendedFloatingActionButton.Custom">
         <item name="android:textColor">@android:color/white</item>
         <item name="backgroundTint">@color/brand_color</item>
         <item name="iconTint">@android:color/white</item>

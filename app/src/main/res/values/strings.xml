@@ -15,4 +15,5 @@
     <string name="back">Back</string>
     <string name="post">Post</string>
     <string name="publish">Publish</string>
+    <string name="post_input_hint">What\'s on your mind ?</string>
 </resources>

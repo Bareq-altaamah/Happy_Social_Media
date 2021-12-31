@@ -7,6 +7,7 @@
     <color name="shade_primary_color">#DFEFF5FB</color>
     <color name="shade_secondary_color">#9AEFF5FB</color>
     <color name="shade_ternary_color">#61EFF5FB</color>
+    <color name="shade_quaternary_color">#14EFF5FB</color>
 
     <color name="tool_bar_color">#FF171C22</color>
 </resources>

@@ -9,6 +9,7 @@
     <color name="shade_primary_color">#DF122940</color>
     <color name="shade_secondary_color">#9A122940</color>
     <color name="shade_ternary_color">#61122940</color>
+    <color name="shade_quaternary_color">#14122940</color>
 
     <color name="tool_bar_color">#FFEDF4FC</color>
 
