@@ -85,11 +85,7 @@
                     android:padding="@dimen/spacingSmall"
                     tools:text="Shahad Abdulhasan"
                     android:text="@{viewModel.postDetails.name}"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:textColor="@color/shade_primary_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
+                    style="@style/Theme.HappySocialMedia.Text.Title"
                     app:layout_constraintBottom_toBottomOf="@+id/layout_image_profile"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/layout_image_profile"
@@ -102,10 +98,8 @@
                     android:layout_margin="@dimen/spacingMedium"
                     android:text="@{viewModel.postDetails.content}"
                     tools:text="Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet. Subscribe today to receive amazing Figma resources for free on your inboxSubscribe This UI sticker sheet.Subscribe today to receive amazing Figma resources for free "
-                    android:textColor="@color/shade_primary_color"
-                    android:textSize="14sp"
+                    style="@style/Theme.HappySocialMedia.Text"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/image_profile" />
 
@@ -116,9 +110,7 @@
                     android:layout_marginStart="@dimen/spacingMedium"
                     tools:text="12 March"
                     android:layout_marginTop="@dimen/spacingExtraLarge"
-                    android:text="@{viewModel.postDetails.date}"
-                    android:textColor="@color/shade_ternary_color"
-                    android:textSize="12sp"
+                    style="@style/Theme.HappySocialMedia.Text.Unimportant"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="@id/button_upvote" />
 
@@ -140,9 +132,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/spacingMedium"
                     tools:text="3.5 K"
+                    style="@style/Theme.HappySocialMedia.Text.Unimportant"
                     android:text="@{viewModel.postDetails.upVote}"
-                    android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                    android:textColor="@color/shade_secondary_color"
                     app:layout_constraintEnd_toStartOf="@id/button_down_vote"
                     app:layout_constraintTop_toTopOf="@id/button_down_vote"
                     app:layout_constraintBottom_toBottomOf="@id/button_down_vote"/>
@@ -165,9 +156,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacingMedium"
                     tools:text="3.5 K"
+                    style="@style/Theme.HappySocialMedia.Text.Unimportant"
                     android:text="@{viewModel.postDetails.downVote}"
                     android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                    android:textColor="@color/shade_secondary_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/label_post_content"/>
 

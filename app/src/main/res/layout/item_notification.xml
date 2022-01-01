@@ -36,8 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/spacingMedium"
                 android:text="Sahar Qais mentioned you in a comment in a thread"
-                android:textColor="@color/shade_secondary_color"
-                android:textSize="14sp"
+                style="@style/Theme.HappySocialMedia.Text"
                 app:layout_constraintEnd_toStartOf="@+id/image_notify"
                 app:layout_constraintStart_toEndOf="@+id/image_profile"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -58,8 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/spacingMedium"
                 android:text="1 min ago"
-                android:textSize="12sp"
-                android:textColor="@color/shade_ternary_color"
+                style="@style/Theme.HappySocialMedia.Text.Unimportant"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/label_notification"
                 app:layout_constraintTop_toBottomOf="@+id/label_notification" />

@@ -7,28 +7,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/tool_bar_color</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="fontFamily">@font/poppins</item>
 
     </style>
 
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">#61448FDA</item>
-    </style>
-
-    <style name="TextViewNumber.TextAppearance" parent="">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:textColor">@color/shade_primary_color</item>
-    </style>
-
-    <style name="TextViewStatus.TextAppearance" parent="">
-        <item name="android:layout_marginTop">1dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/shade_secondary_color</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.App.CornerSize25Percent" parent="">
@@ -46,10 +30,39 @@
 
     <style name="Theme.ScrollingAnimation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="Base.Widget.Material3.ExtendedFloatingActionButton.Custom">
+    <style name="Base.Widget.Material3.ExtendedFloatingActionButton.Custom" parent="Theme.HappySocialMedia">
         <item name="android:textColor">@android:color/white</item>
         <item name="backgroundTint">@color/brand_color</item>
         <item name="iconTint">@android:color/white</item>
     </style>
+
+    <style name="Theme.HappySocialMedia.Text">
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/shade_secondary_color</item>
+    </style>
+
+    <style name="Theme.HappySocialMedia.Text.Input">
+        <item name="android:textColor">@color/shade_primary_color</item>
+        <item name="android:textColorHint">@color/shade_secondary_color</item>
+    </style>
+
+    <style name="Theme.HappySocialMedia.Text.Unimportant">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/shade_ternary_color</item>
+    </style>
+
+    <style name="Theme.HappySocialMedia.Text.Title">
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/shade_primary_color</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Theme.HappySocialMedia.Text.Title.Large">
+        <item name="android:textSize">22sp</item>
+    </style>
+
 
 </resources>

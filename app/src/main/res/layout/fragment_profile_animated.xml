@@ -88,8 +88,7 @@
                         android:layout_marginTop="56dp"
                         android:gravity="center"
                         android:text="@{viewModel.user.bio}"
-                        android:textColor="@color/shade_ternary_color"
-                        android:textSize="12sp"
+                        style="@style/Theme.HappySocialMedia.Text.Unimportant"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/image_profile"
@@ -112,7 +111,9 @@
 
                     <TextView
                         android:id="@+id/label_followers_numbers"
-                        style="@style/TextViewNumber.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Title"
                         android:layout_marginTop="@dimen/spacingMedium"
                         android:text="@{viewModel.user.followers}"
                         app:layout_constraintEnd_toStartOf="@id/label_following_numbers"
@@ -123,7 +124,9 @@
 
                     <TextView
                         android:id="@+id/label_followers"
-                        style="@style/TextViewStatus.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Unimportant"
                         android:text="@string/followers"
                         app:layout_constraintEnd_toEndOf="@id/label_followers_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_followers_numbers"
@@ -131,7 +134,9 @@
 
                     <TextView
                         android:id="@+id/label_following_numbers"
-                        style="@style/TextViewNumber.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Title"
                         android:text="@{viewModel.user.following}"
                         app:layout_constraintBottom_toBottomOf="@id/label_followers_numbers"
                         app:layout_constraintEnd_toStartOf="@id/label_up_vote_numbers"
@@ -141,7 +146,9 @@
 
                     <TextView
                         android:id="@+id/label_following"
-                        style="@style/TextViewStatus.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Unimportant"
                         android:text="@string/following"
                         app:layout_constraintEnd_toEndOf="@id/label_following_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_following_numbers"
@@ -149,7 +156,9 @@
 
                     <TextView
                         android:id="@+id/label_up_vote_numbers"
-                        style="@style/TextViewNumber.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Title"
                         android:text="@{viewModel.user.upVote}"
                         app:layout_constraintBottom_toBottomOf="@id/label_following_numbers"
                         app:layout_constraintEnd_toStartOf="@id/label_down_vote_numbers"
@@ -159,7 +168,9 @@
 
                     <TextView
                         android:id="@+id/label_up_vote"
-                        style="@style/TextViewStatus.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Unimportant"
                         android:text="@string/up_vote"
                         app:layout_constraintEnd_toEndOf="@id/label_up_vote_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_up_vote_numbers"
@@ -167,7 +178,9 @@
 
                     <TextView
                         android:id="@+id/label_down_vote_numbers"
-                        style="@style/TextViewNumber.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Title"
                         android:text="@{viewModel.user.downVote}"
                         app:layout_constraintBottom_toBottomOf="@id/label_up_vote_numbers"
                         app:layout_constraintEnd_toEndOf="@id/status_container"
@@ -177,7 +190,9 @@
 
                     <TextView
                         android:id="@+id/label_down_vote"
-                        style="@style/TextViewStatus.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Theme.HappySocialMedia.Text.Unimportant"
                         android:text="@string/down_vote"
                         app:layout_constraintEnd_toEndOf="@id/label_down_vote_numbers"
                         app:layout_constraintStart_toStartOf="@id/label_down_vote_numbers"
