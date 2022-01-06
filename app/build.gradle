@@ -88,4 +88,8 @@ dependencies {
     def hilt_version = "2.40.3"
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //happiness detector
+    implementation project(path: ':happiness_detector')
+
 }

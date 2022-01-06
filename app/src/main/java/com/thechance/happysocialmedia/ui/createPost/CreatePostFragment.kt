@@ -18,12 +18,16 @@ import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.widget.Toast
+import com.shahad.app.happiness_detector.HappinessCalculator
+import com.shahad.app.happiness_detector.HappinessLevel
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class CreatePostFragment: BaseFragment<FragmentCreatePostBinding>() {
-    override fun getLayoutID() = R.layout.fragment_create_post
 
+    override fun getLayoutID() = R.layout.fragment_create_post
     override val viewModel: CreatePostViewModel by viewModels()
+    @Inject lateinit var happinessCalculator : HappinessCalculator
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,10 +55,10 @@ class CreatePostFragment: BaseFragment<FragmentCreatePostBinding>() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 result.data?.data?.let {
-                    viewModel.imagePost.postValue(getBitmapFromURI(it))
+                    checkHappinessImage(getBitmapFromURI(it))
                 }
             }else{
-                Toast.makeText(requireContext(),"fail upload Image",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(),"fail to upload Image",Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -67,5 +71,17 @@ class CreatePostFragment: BaseFragment<FragmentCreatePostBinding>() {
                 .getBitmap(requireActivity().contentResolver,uri)
         }
 
+    private fun checkHappinessImage(bitmap: Bitmap){
+        happinessCalculator.analyseImageHappiness(bitmap){
+            when(it){
+                HappinessLevel.HAPPY , HappinessLevel.NORMAL-> {
+                    viewModel.imagePost.postValue(bitmap)
+                }
+                HappinessLevel.SAD -> {
+                    Toast.makeText(requireContext(),"choose happy image :) ",Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
 
 }

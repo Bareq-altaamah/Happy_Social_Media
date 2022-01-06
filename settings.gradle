@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Happy Social Media"
 include ':app'
+include ':happiness_detector'
