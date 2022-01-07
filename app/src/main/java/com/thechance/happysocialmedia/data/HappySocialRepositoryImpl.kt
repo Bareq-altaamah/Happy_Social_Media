@@ -2,6 +2,7 @@ package com.thechance.happysocialmedia.data
 
 import com.thechance.happysocialmedia.data.local.daos.HappySocialDao
 import com.thechance.happysocialmedia.data.remote.HappySocialService
+import com.thechance.happysocialmedia.domain.models.Notification
 import com.thechance.happysocialmedia.domain.models.Post
 import com.thechance.happysocialmedia.domain.models.User
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +21,10 @@ class HappySocialRepositoryImpl @Inject constructor(
     }
 
     override fun getUserByName(name: String): Flow<List<User>> {
+        TODO("Not yet implemented")
+    }
+
+    override fun getNotification(): Flow<List<Notification>> {
         TODO("Not yet implemented")
     }
 }
