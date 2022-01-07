@@ -22,3 +22,10 @@ fun setButtonColors(view: ImageView, isChecked: Boolean){
         view.setColorFilter(ContextCompat.getColor(view.context, R.color.shade_ternary_color))
     }
 }
+
+@BindingAdapter(value = ["app:isActive"])
+fun setImageActive(view: ImageView, isActive: Boolean){
+    if (isActive){
+        view.setImageDrawable(ContextCompat.getDrawable(view.context, R.drawable.circle))
+    }
+}
