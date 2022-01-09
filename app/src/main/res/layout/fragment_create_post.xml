@@ -120,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> viewModel.onClickPublish()}"
                     app:layout_constraintEnd_toEndOf="parent"
+                    android:enabled="@{!viewModel.isSad}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_margin="@dimen/spacingMedium"
                     android:text="@string/publish"
