@@ -8,7 +8,7 @@ import com.thechance.happysocialmedia.BR
 
 abstract class BaseDataItemAdapter<T>(
     private var items: List<T>,
-    private val listener: BaseItemInteractionListener
+    private val listener: BaseItemInteractionListener?
 ): RecyclerView.Adapter<BaseDataItemAdapter.BaseViewHolder>(){
 
     @LayoutRes

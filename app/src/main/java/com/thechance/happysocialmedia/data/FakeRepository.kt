@@ -373,8 +373,7 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
                 "326",
             )
         )
-
-        val result = users.filter { user -> user.name.contains(name) }
+        val result = users.filter { user -> user.name.lowercase().trim().contains(name) }
         emit(result)
     }
 }
