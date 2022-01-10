@@ -64,5 +64,11 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+    <style name="Theme.HappySocialMedia.Text.Input.Identity">
+        <item name="android:textColor">@color/shade_ternary_color</item>
+        <item name="android:textColorHint">@color/shade_ternary_color</item>
+        <item name="android:background">@drawable/shape_input_text</item>
+    </style>
+
 
 </resources>
