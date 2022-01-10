@@ -51,9 +51,9 @@
                 android:id="@+id/image_notify"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:layout_marginEnd="@dimen/spacingLarge"
-                tools:src="@drawable/circle"
-                app:isActive="@{item.active}"
+                android:layout_marginEnd="@dimen/spacingMedium"
+                android:src="@drawable/circle"
+                show="@{item.active}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
