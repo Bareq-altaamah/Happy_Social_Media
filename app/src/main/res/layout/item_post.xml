@@ -19,6 +19,7 @@
         android:layout_marginStart="@dimen/spacingMedium"
         android:layout_marginTop="@dimen/spacingMedium"
         android:layout_marginEnd="@dimen/spacingMedium"
+        android:onClick="@{()-> listener.onClickPost(item)}"
         style="?attr/materialCardViewFilledStyle"
         app:cardCornerRadius="@dimen/cornerRadiusMedium">
 

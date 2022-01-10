@@ -1,5 +1,9 @@
 package com.thechance.happysocialmedia.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Post(
     val id: Int,
     val name: String,
@@ -11,4 +15,4 @@ data class Post(
     val downVote: String,
     val isUpVoted: Boolean = false,
     val isDownVoted: Boolean = false,
-)
+) : Parcelable
