@@ -23,4 +23,5 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in">Sign in</string>
     <string name="email">Email</string>
+    <string name="log_in">Log in</string>
 </resources>

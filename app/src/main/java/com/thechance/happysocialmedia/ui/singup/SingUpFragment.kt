@@ -1,25 +1,18 @@
-package com.thechance.happysocialmedia.ui.identity.singup
+package com.thechance.happysocialmedia.ui.singup
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.thechance.happysocialmedia.R
-import com.thechance.happysocialmedia.databinding.SingupFragmentBinding
+import com.thechance.happysocialmedia.databinding.FragmentSingUpBinding
 import com.thechance.happysocialmedia.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SingUpFragment : BaseFragment<SingupFragmentBinding>() {
-    override fun getLayoutID() = R.layout.singup_fragment
+class SingUpFragment : BaseFragment<FragmentSingUpBinding>() {
+    override fun getLayoutID() = R.layout.fragment_sing_up
     override val viewModel: SingUpViewModel by viewModels()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.textSignIn.setOnClickListener {
-            onNavigate()
-        }
-    }
 
 
     private fun onNavigate() {

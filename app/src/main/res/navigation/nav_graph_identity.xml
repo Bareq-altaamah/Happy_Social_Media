@@ -7,16 +7,16 @@
 
     <fragment
         android:id="@+id/singUpFragment"
-        android:name="com.thechance.happysocialmedia.ui.identity.singup.SingUpFragment"
+        android:name="com.thechance.happysocialmedia.ui.singup.SingUpFragment"
         android:label="SingUpFragment"
-        tools:layout="@layout/singup_fragment" >
+        tools:layout="@layout/fragment_sing_up" >
         <action
             android:id="@+id/action_singUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.thechance.happysocialmedia.ui.identity.login.LoginFragment"
+        android:name="com.thechance.happysocialmedia.ui.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login" >
         <action

@@ -1,4 +1,4 @@
-package com.thechance.happysocialmedia.ui.identity.login
+package com.thechance.happysocialmedia.ui.login
 
 import android.os.Bundle
 import android.view.View
@@ -14,15 +14,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun getLayoutID() = R.layout.fragment_login
 
     override val viewModel: LoginViewModel by viewModels()
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.textSingUp.setOnClickListener {
-            onNavigate()
-        }
-    }
-
 
     private fun onNavigate() {
         findNavController().navigate(

@@ -1,4 +1,4 @@
-package com.thechance.happysocialmedia.ui.identity.singup
+package com.thechance.happysocialmedia.ui.login
 
 import androidx.lifecycle.MutableLiveData
 import com.thechance.happysocialmedia.data.HappySocialRepository
@@ -7,15 +7,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SingUpViewModel @Inject constructor(
+class LoginViewModel @Inject constructor(
     val repository: HappySocialRepository
 ) : BaseViewModel() {
 
-    val email = MutableLiveData<String?>()
+
     val userName = MutableLiveData<String?>()
     val password = MutableLiveData<String?>()
 
-    fun singUpWithUser() {
+    fun onClickLogin() {
         //TODO:implement later
     }
 
