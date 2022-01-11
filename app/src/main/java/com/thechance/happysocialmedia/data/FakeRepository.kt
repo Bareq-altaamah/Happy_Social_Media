@@ -1,5 +1,6 @@
 package com.thechance.happysocialmedia.data
 
+import com.thechance.happysocialmedia.domain.models.Notification
 import com.thechance.happysocialmedia.domain.models.Post
 import com.thechance.happysocialmedia.domain.models.User
 import kotlinx.coroutines.flow.Flow
@@ -377,4 +378,62 @@ class FakeRepository @Inject constructor(): HappySocialRepository {
         val result = users.filter { user -> user.name.contains(name) }
         emit(result)
     }
+
+    override fun getNotification(): Flow<List<Notification>> = flow {
+        val result = listOf(
+            Notification(
+                0,
+                "https://pbs.twimg.com/profile_images/1346200826998644736/GXKFXDl7_400x400.jpg",
+                "Sahar Qais mentioned you in a comment in a thread",
+                "1 min ago",
+                true,
+                ),
+            Notification(
+                1,
+                "https://img.wattpad.com/ac774401878614400d9ff2eba27870e8cca3ba8f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6a7445346c65564975635a4834773d3d2d3434393237343839362e313464363865343537326634373334323733303639343033363234382e6a7067",
+                "Shahad UI also commented on Ammar’s post",
+                "4 min ago",
+                false,
+            ),
+            Notification(
+                2,
+                "https://www.chaac.tf.fau.eu/files/2021/02/1071625.jpg",
+                "Mohammed Meo shared   Amnah Ali’s post",
+                "19 min ago",
+                true,
+            ),
+            Notification(
+                3,
+                "https://transportationenergypartners.org/wp-content/uploads/2020/08/random-person-3.jpg",
+                "Ahmed Yusef also commented on Ammar’s post",
+                "1 hour ago",
+                true,
+            ),
+            Notification(
+                4,
+                "https://i.pinimg.com/originals/5a/23/d7/5a23d7a5b80c846695b7c92b2876f09e.jpg",
+                "Shahad Kadhim mentioned you in a comment in a thread",
+                "1 day ago",
+                false,
+            ),
+            Notification(
+                5,
+                "https://img.wattpad.com/ac774401878614400d9ff2eba27870e8cca3ba8f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6a7445346c65564975635a4834773d3d2d3434393237343839362e313464363865343537326634373334323733303639343033363234382e6a7067",
+                "Shahad UI also commented on Ahmed’s post",
+                "2 day ago",
+                false,
+            ),
+            Notification(
+                6,
+                "https://pbs.twimg.com/profile_images/1346200826998644736/GXKFXDl7_400x400.jpg",
+                "Nooraldeen mentioned you in a comment in a thread",
+                "1 week ago",
+                true,
+            ),
+
+        )
+        emit(result)
+    }
+
+
 }
