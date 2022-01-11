@@ -16,3 +16,8 @@ fun setAnimatedVisibility(view: View, value: Boolean?) {
     TransitionManager.beginDelayedTransition(view.rootView as ViewGroup)
     view.visibility = if(value.isTrue()) View.VISIBLE else View.GONE
 }
+
+@BindingAdapter(value = ["app:hideIfNull"])
+fun <T> hideView(view: View , value: T?){
+    view.visibility = if(value == null) View.GONE else View.VISIBLE
+}

@@ -2,6 +2,7 @@ package com.thechance.happysocialmedia.util.bindingAdapters
 
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
@@ -20,5 +21,12 @@ fun setButtonColors(view: ImageView, isChecked: Boolean){
         view.setColorFilter(ContextCompat.getColor(view.context, R.color.brand_color))
     }else{
         view.setColorFilter(ContextCompat.getColor(view.context, R.color.shade_ternary_color))
+    }
+}
+
+@BindingAdapter(value = ["app:setImageByBitmap"])
+fun setImageByBitmap(view: ImageView, bitmap: Bitmap?){
+    bitmap?.let {
+        view.setImageBitmap(it)
     }
 }
