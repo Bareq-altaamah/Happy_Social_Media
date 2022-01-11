@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/createPostFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.thechance.happysocialmedia.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.thechance.happysocialmedia.ui.search.SearchFragment"
@@ -29,12 +36,21 @@
         android:id="@+id/profileFragment"
         android:name="com.thechance.happysocialmedia.ui.profile.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile_animated"/>
+        tools:layout="@layout/fragment_profile_animated">
+        <action
+            android:id="@+id/action_profileFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
     <fragment
         android:id="@+id/postFragment"
         android:name="com.thechance.happysocialmedia.ui.postDetails.PostDetailsFragment"
         android:label="PostFragment"
-        tools:layout="@layout/fragment_post_details"/>
+        tools:layout="@layout/fragment_post_details">
+        <argument
+            android:name="post"
+            app:argType="com.thechance.happysocialmedia.domain.models.Post"
+            app:nullable="true" />
+    </fragment>
     <fragment
         android:id="@+id/createPostFragment"
         android:name="com.thechance.happysocialmedia.ui.createPost.CreatePostFragment"
